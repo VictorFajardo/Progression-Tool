@@ -1,3 +1,37 @@
 :host {
+    // height: 70px;
+}
+
+h1 {
+    font-size: 24px;
+    color: rgb(60, 60, 60);
+    line-height: 70px;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 70px;
+    width: 160px;
+    padding: 11px;
+    a {
+        img {
+            width: 138px;
+        }
+    }
+}
+#social-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 120px;
+    padding: 14px 13px;
+    a {
+        img {
+            width: 94px;
+        }
+    }
 }

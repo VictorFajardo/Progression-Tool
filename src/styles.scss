@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/* Imports */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+/* Fonts */
+
+@font-face {
+    font-family: "Lato Heavy";
+    src: url("assets/fonts/Lato-Heavy.ttf");
+}
+
+/* Overrides */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Global Styles */
+
+h1 {
+    font-family: 'Lora', serif;
+    margin-bottom: 0;
+}
