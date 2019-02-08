@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
   constructor(private grid: GridService) { }
 
   ngOnInit() {
-    this.grid.show();
+    // this.grid.show();
   }
 
   showGrid() {

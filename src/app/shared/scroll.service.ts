@@ -15,63 +15,62 @@ export class ScrollService {
    }
 
   scrollProgress(pos: number) {
-    // console.log($('#animation-2').outerHeight(true) );
+    // console.log($('#animation-1').outerHeight(true) );
     // console.log();
     /* SECTION-2 */
     // Start Point
     if (pos >= $('#container-2').offset().top - this.navHeight) {
-      if (!$('#animation-2').hasClass('fixed')) {
-        console.log('#animation-2 fixed!');
-        $('#animation-2').addClass('fixed');
+      if (!$('#animation-1').hasClass('fixed')) {
+        console.log('#animation-1 fixed!');
+        $('#animation-1').addClass('fixed');
       }
     } else {
-      if ($('#animation-2').hasClass('fixed')) {
-        console.log('#animation-2 remove fixed!');
-        $('#animation-2').removeClass('fixed');
+      if ($('#animation-1').hasClass('fixed')) {
+        console.log('#animation-1 remove fixed!');
+        $('#animation-1').removeClass('fixed');
       }
     }
     // End Point
-    if (pos >= $('#container-2').offset().top + $('#container-2').height() - $('#animation-2').outerHeight(true) - this.navHeight) {
-      if (!$('#animation-2').hasClass('absolute')) {
-        console.log('#animation-2 absolute!');
-        $('#animation-2').addClass('absolute');
+    if (pos >= $('#placeholder-5').offset().top - this.navHeight) {
+      if (!$('#animation-1').hasClass('absolute')) {
+        console.log('#animation-1 absolute!');
+        $('#animation-1').addClass('absolute');
       }
     } else {
-      if ($('#animation-2').hasClass('absolute')) {
-        console.log('#animation-2 remove absolute!');
-        $('#animation-2').removeClass('absolute');
+      if ($('#animation-1').hasClass('absolute')) {
+        console.log('#animation-1 remove absolute!');
+        $('#animation-1').removeClass('absolute');
       }
     }
     // Sub Animations
-    this.zoom($('#placeholder-1'), $('#animation-2'), pos);
-    this.fade($('#placeholder-2'), $('#animation-2 #slide-2'), pos);
+    this.zoom($('#placeholder-1'), $('#animation-1'), 1, 1.16, pos);
+    this.fade($('#placeholder-2'), $('#animation-1 #slide-2'), 0, 1, pos);
+    this.zoom($('#placeholder-3'), $('#animation-1 #slide-3'), .03, 1, pos);
+    this.opacity($('#placeholder-3'), $('#animation-1 #slide-3'), pos);
+    this.zoom($('#placeholder-4'), $('#animation-1 #slide-4'), .03, 1, pos);
+    this.opacity($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
   }
 
-  zoom(source: any, target: any, pos: number) {
+  zoom(source: any, target: any, initial: number, final: number, pos: number) {
     if (pos >= source.offset().top - this.navHeight && pos <= source.offset().top - this.navHeight + source.outerHeight()) {
-      // console.log(1 + .16 * (pos - source.offset().top + this.navHeight) / source.outerHeight());
-      target.css('transform', 'scale(' + ( 1 + .16 * (pos - source.offset().top + this.navHeight) / source.outerHeight()) + ')');
+      // console.log(initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight());
+      // tslint:disable-next-line:max-line-length
+      target.css('transform', 'scale(' + ( initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()) + ')');
     } else {
-      if (pos < source.offset().top) {
-        target.css('transform', 'scale(1)');
-      } else {
-        target.css('transform', 'scale(1.16)');
-      }
+      target.css('transform', 'scale(' + (pos < source.offset().top ? initial : final) + ')');
     }
-
   }
 
-  fade(source: any, target: any, pos: number) {
+  fade(source: any, target: any, initial: number, final: number, pos: number) {
     if (pos >= source.offset().top - this.navHeight && pos <= source.offset().top - this.navHeight + source.outerHeight()) {
-      // console.log((pos - source.offset().top + this.navHeight) / source.outerHeight());
-      target.css('opacity', (pos - source.offset().top + this.navHeight) / source.outerHeight());
+      // console.log(initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight());
+      target.css('opacity', (initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()));
     } else {
-      if (pos < source.offset().top) {
-        target.css('opacity', 0);
-      } else {
-        target.css('opacity', 1);
-      }
+      target.css('opacity', pos < source.offset().top ? initial : final);
     }
+  }
 
+  opacity(source: any, target: any, pos: number) {
+    target.css('opacity', pos >= source.offset().top - this.navHeight ? 1 : 0);
   }
 }
