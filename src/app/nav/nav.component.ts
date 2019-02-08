@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { GridService } from '../shared/grid.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private grid: GridService) { }
 
   ngOnInit() {
+    this.grid.show();
   }
 
+  showGrid() {
+    this.grid.show();
+  }
+
+  // @HostListener('window:scroll', ['$event'])
+  // doSomethingOnInternalScroll($event: Event) {
+  //   const scrollOffset = $event.srcElement.children[0].scrollTop;
+  //   console.log('scroll: ', scrollOffset);
+  // }
 }

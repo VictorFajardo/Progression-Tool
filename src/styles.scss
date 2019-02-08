@@ -10,6 +10,13 @@
     src: url("assets/fonts/Lato-Heavy.ttf");
 }
 
+@font-face {
+    font-family: "Lato Regular";
+    src: url("assets/fonts/Lato-Regular.ttf");
+}
+
+@import "src/variables.scss";
+
 /* Overrides */
 
 @media (min-width: 1200px) {
@@ -19,8 +26,17 @@
 }
 
 /* Global Styles */
-
+body {
+    padding-top: 70px; // Nav Height
+}
 h1 {
-    font-family: 'Lora', serif;
+    font-family: $lora;
     margin-bottom: 0;
+}
+p {
+    font-family: $lato;
+    color: #4d4d4d;
+    strong {
+        font-family: $lato-heavy;
+    }
 }

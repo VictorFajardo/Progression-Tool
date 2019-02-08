@@ -11,5 +11,4 @@ export class Section2Component implements OnInit {
 
   ngOnInit() {
   }
-
 }
