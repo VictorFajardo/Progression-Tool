@@ -52,7 +52,8 @@ nav {
             }
             #placeholder-5 {
                 height: unset;
-                transform: scale(1.16);
+                position: relative;
+                // transform: scale(1.16);
                 img {
                     width: 100%
                 }
@@ -71,6 +72,9 @@ nav {
                         top : 0;
                         left: 0;
                     }
+                }
+                #slide-1 {
+                    transform: scale(0.86);
                 }
                 #slide-2, #slide-3, #slide-4 {
                     opacity: 0;
@@ -92,7 +96,7 @@ nav {
                 &.absolute {
                     position: absolute;
                     top: unset;
-                    bottom: 56px;
+                    bottom: 0;
                 }
             }
             .text {

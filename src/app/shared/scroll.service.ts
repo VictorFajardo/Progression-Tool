@@ -33,7 +33,7 @@ export class ScrollService {
       }
     }
     // End Point
-    if (pos >= $('#placeholder-5').offset().top - this.gap) {
+    if (pos >= $('#placeholder-5').offset().top - this.navHeight) {
       if (!$('#animation-1').hasClass('absolute')) {
         console.log('#animation-1 absolute!');
         $('#animation-1').addClass('absolute');
@@ -45,7 +45,7 @@ export class ScrollService {
       }
     }
     // Sub Animations
-    this.zoom($('#placeholder-1'), $('#animation-1'), 1, 1.16, pos);
+    this.zoom($('#placeholder-1'), $('#animation-1 #slide-1'), 0.86, 1, pos);
     this.fade($('#placeholder-2'), $('#animation-1 #slide-2'), 0, 1, pos);
     this.zoom($('#placeholder-3'), $('#animation-1 #slide-3'), .03, 1, pos);
     this.opacity($('#placeholder-3'), $('#animation-1 #slide-3'), pos);
