@@ -9,13 +9,15 @@ export class ScrollService {
   // cont2 = $('#container-2').offset().top;
   // timeZoom = 400; // distance in pixels
   navHeight = 70; // nav height
+  gap = 14;
 
   constructor() {
     // console.log($('#container-2').offset().top);
    }
 
   scrollProgress(pos: number) {
-    // console.log($('#animation-1').outerHeight(true) );
+    console.log('pos:', pos);
+    // console.log(pos, $('#animation-1').offset().top,  $('#placeholder-5').offset().top);
     // console.log();
     /* SECTION-2 */
     // Start Point
@@ -31,7 +33,7 @@ export class ScrollService {
       }
     }
     // End Point
-    if (pos >= $('#placeholder-5').offset().top - this.navHeight) {
+    if (pos >= $('#placeholder-5').offset().top - this.gap) {
       if (!$('#animation-1').hasClass('absolute')) {
         console.log('#animation-1 absolute!');
         $('#animation-1').addClass('absolute');

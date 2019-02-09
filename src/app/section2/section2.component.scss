@@ -36,11 +36,6 @@ nav {
         }
     }
 }
-.placeholder {
-    img {
-        width: 100%;
-    }
-}
 .main {
     .content {
         margin-top: 55px;
@@ -51,12 +46,17 @@ nav {
                 }
             }
             .placeholder {
-                height: 400px;
+                height: 800px;
                 border-bottom: 1px dashed rgba(0, 0, 0, .5);
                 border-top: 1px dashed rgba(0, 0, 0, .5);
             }
             #placeholder-5 {
                 height: unset;
+                // transform: scale(1.16);
+
+                width: 812px;
+                height: 812px;
+                position: relative;
             }
             #animation-1 {
                 position: absolute;
