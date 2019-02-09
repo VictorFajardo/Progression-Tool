@@ -52,11 +52,14 @@ nav {
             }
             #placeholder-5 {
                 height: unset;
-                // transform: scale(1.16);
+                transform: scale(1.16);
+                img {
+                    width: 100%
+                }
 
-                width: 812px;
-                height: 812px;
-                position: relative;
+                // width: 812px;
+                // height: 812px;
+                // position: relative;
             }
             #animation-1 {
                 position: absolute;
