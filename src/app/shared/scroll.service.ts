@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 })
 export class ScrollService {
 
-  // cont2 = $('#container-2').offset().top;
+  // cont2 = start.offset().top;
   // timeZoom = 400; // distance in pixels
   navHeight = 70; // nav height
   gap = 14;
@@ -20,37 +20,44 @@ export class ScrollService {
     // console.log(pos, $('#animation-1').offset().top,  $('#placeholder-5').offset().top);
     // console.log();
     /* SECTION-2 */
-    // Start Point
-    if (pos >= $('#container-2').offset().top - this.navHeight) {
-      if (!$('#animation-1').hasClass('fixed')) {
-        console.log('#animation-1 fixed!');
-        $('#animation-1').addClass('fixed');
-      }
-    } else {
-      if ($('#animation-1').hasClass('fixed')) {
-        console.log('#animation-1 remove fixed!');
-        $('#animation-1').removeClass('fixed');
-      }
-    }
-    // End Point
-    if (pos >= $('#placeholder-5').offset().top - this.navHeight) {
-      if (!$('#animation-1').hasClass('absolute')) {
-        console.log('#animation-1 absolute!');
-        $('#animation-1').addClass('absolute');
-      }
-    } else {
-      if ($('#animation-1').hasClass('absolute')) {
-        console.log('#animation-1 remove absolute!');
-        $('#animation-1').removeClass('absolute');
-      }
-    }
+
+    // Animations
+    this.position($('#container-2'), $('#placeholder-5'), $('#animation-1'), pos);
+
     // Sub Animations
     this.zoom($('#placeholder-1'), $('#animation-1 #slide-1'), 0.86, 1, pos);
     this.fade($('#placeholder-2'), $('#animation-1 #slide-2'), 0, 1, pos);
     this.zoom($('#placeholder-3'), $('#animation-1 #slide-3'), .03, 1, pos);
-    this.opacity($('#placeholder-3'), $('#animation-1 #slide-3'), pos);
+    this.visibility($('#placeholder-3'), $('#animation-1 #slide-3'), pos);
     this.zoom($('#placeholder-4'), $('#animation-1 #slide-4'), .03, 1, pos);
-    this.opacity($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
+    this.visibility($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
+  }
+
+  position(start: any, end: any, target: any, pos: number) {
+    // Start Point
+    if (pos >= start.offset().top - this.navHeight) {
+      if (!target.hasClass('fixed')) {
+        target.addClass('fixed');
+      }
+    } else {
+      if (target.hasClass('fixed')) {
+        target.removeClass('fixed');
+      }
+    }
+    // End Point
+    if (pos >= end.offset().top - this.navHeight) {
+      if (!target.hasClass('absolute')) {
+        target.addClass('absolute');
+      }
+    } else {
+      if (target.hasClass('absolute')) {
+        target.removeClass('absolute');
+      }
+    }
+  }
+
+  visibility(source: any, target: any, pos: number) {
+    target.css('visibility', pos >= source.offset().top - this.navHeight ? 'visible' : 'hidden');
   }
 
   zoom(source: any, target: any, initial: number, final: number, pos: number) {
@@ -72,7 +79,4 @@ export class ScrollService {
     }
   }
 
-  opacity(source: any, target: any, pos: number) {
-    target.css('opacity', pos >= source.offset().top - this.navHeight ? 1 : 0);
-  }
 }

@@ -47,20 +47,16 @@ nav {
             }
             .placeholder {
                 height: 800px;
-                border-bottom: 1px dashed rgba(0, 0, 0, .5);
-                border-top: 1px dashed rgba(0, 0, 0, .5);
+                border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
+                border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
+                margin: -1px auto; //dev
             }
             #placeholder-5 {
                 height: unset;
                 position: relative;
-                // transform: scale(1.16);
                 img {
                     width: 100%
                 }
-
-                // width: 812px;
-                // height: 812px;
-                // position: relative;
             }
             #animation-1 {
                 position: absolute;
@@ -102,11 +98,25 @@ nav {
             .text {
                 margin-top: 55px;
                 margin-bottom: 55px;
-                background-color: #f7f7f7;
                 padding: 50px;
-                font-size: 20px;
                 line-height: 30px;
+                p {
+                    margin-bottom: 0;
+                }
             }
+            .normal {
+                background-color: #f7f7f7;
+                font-size: 20px;
+            }
+            .emphasis {
+                font-size: 22px;
+                text-align: center;
+                background-color: #000;
+                p {                    
+                    color: #fff;
+                    font-family: $lora;
+                }
+              }
         }
     }
 }
