@@ -16,10 +16,10 @@ export class ScrollService {
    }
 
   scrollProgress(pos: number) {
-    console.log('pos:', pos);
-    // console.log(pos, $('#animation-1').offset().top,  $('#placeholder-5').offset().top);
-    // console.log();
-    /* SECTION-2 */
+    // console.log('pos:', pos);
+
+    // Menu Items
+    this.menu(pos);
 
     // Animations
     this.position($('#container-2'), $('#placeholder-5'), $('#animation-1'), pos);
@@ -79,4 +79,13 @@ export class ScrollService {
     }
   }
 
+  menu(pos: number) {
+    for (let i = 0; i < 3; i++) {
+      // tslint:disable-next-line:max-line-length
+      if (pos >= $('app-section' + i).offset().top - this.navHeight && pos < (i < 2 ? $('app-section' + (i + 1)).offset().top - this.navHeight : $('app-footer').offset().top)) {
+        $('app-side-nav .nav-item.active').removeClass('active');
+        $('app-side-nav .section-' + i).addClass('active');
+      }
+    }
+  }
 }

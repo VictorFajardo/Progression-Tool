@@ -1,0 +1,123 @@
+@import "src/assets/scss/variables.scss";
+
+section {
+    nav {
+        // background: url('/assets/section2-bg.jpg') center top no-repeat;
+        background-size: cover;
+        .content {
+            height: 700px;
+            position: relative;
+            .title {
+                position: absolute;
+                bottom: -55px;
+                .label {
+                    width: 100px;
+                    height: 40px;
+                    background-color: $green2;
+                    p {
+                        line-height: 40px;
+                        width: 50px;
+                        margin: 0;
+                        font-size: 25px;
+                        text-align: center;
+                        color: #fff;
+                        background-color: $green1;
+                        font-family: $lato-heavy;
+                    }
+                }
+                .text {
+                    padding: 39px 50px 37px;
+                    background-color: #fff;
+                    h1 {
+                        font-size: 56px;
+                        line-height: 1.214;
+                        color: rgb(77, 77, 77);
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        .content {
+            margin-top: 55px;
+            .row {
+                .placeholder {
+                    height: 800px;
+                    border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
+                    border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
+                    margin: -1px auto; //dev
+                }
+                #placeholder-5 {
+                    height: unset;
+                    position: relative;
+                    img {
+                        width: 100%
+                    }
+                }
+                #animation-1 {
+                    position: absolute;
+                    top: 0;
+                    img {
+                        width: 100%;
+                        &:not(:first-of-type) {
+                            position: absolute;
+                            top : 0;
+                            left: 0;
+                        }
+                    }
+                    #slide-1 {
+                        transform: scale(0.86);
+                    }
+                    #slide-2, #slide-3, #slide-4 {
+                        opacity: 0;
+                    }
+                    #slide-3 {
+                        opacity: 1;
+                        transform-origin: 23.2% 80%;
+                        transform: scale(0.03);
+                    }
+                    #slide-4 {
+                        opacity: 1;
+                        transform-origin: 62% 85%;
+                        transform: scale(0.03);
+                    }
+                    &.fixed {
+                        position: fixed;
+                        top: 70px;
+                    }
+                    &.absolute {
+                        position: absolute;
+                        top: unset;
+                        bottom: 0;
+                    }
+                }
+                .text {
+                    margin-top: 55px;
+                    margin-bottom: 55px;
+                    padding: 50px;
+                    font-size: 20px;
+                    line-height: 30px;
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+                .block-text {
+                    background-color: #f7f7f7;
+                }
+                .copy {
+                    padding-top: 0;
+                    margin: 0;
+                }
+                .emphasis {
+                    font-size: 22px;
+                    text-align: center;
+                    background-color: #000;
+                    p {                    
+                        color: #fff;
+                        font-family: $lora;
+                    }
+                }
+            }
+        }
+    }
+}

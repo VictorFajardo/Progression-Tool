@@ -9,6 +9,8 @@ import { Section2Component } from './section2/section2.component';
 import { FooterComponent } from './footer/footer.component';
 
 import * as $ from 'jquery';
+import { Section0Component } from './section0/section0.component';
+import { Section1Component } from './section1/section1.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import * as $ from 'jquery';
     NavComponent,
     SideNavComponent,
     Section2Component,
-    FooterComponent
+    FooterComponent,
+    Section0Component,
+    Section1Component
   ],
   imports: [
     BrowserModule,
