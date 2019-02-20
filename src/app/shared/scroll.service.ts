@@ -22,29 +22,30 @@ export class ScrollService {
     this.menu(pos);
 
     // Animations
-    this.position($('#container-2'), $('#placeholder-5'), $('#animation-1'), pos);
+    this.position($('#container-2'), $('#placeholder-12'), $('#animation-1'), pos);
 
     // Sub Animations
     this.zoom($('#placeholder-1'), $('#animation-1 #slide-1'), 0.86, 1, pos);
     this.fade($('#placeholder-2'), $('#animation-1 #slide-2'), 0, 1, pos);
-    this.visibility($('#placeholder-3-1'), $('#animation-1 #slide-3-1'), pos);
-    this.visibility($('#placeholder-3-2'), $('#animation-1 #slide-3-2'), pos);
-    this.visibility($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
+    this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-1 #slide-3-1'), true, pos);
+    this.visibility($('#placeholder-3-2'), $('#placeholder-4'), $('#animation-1 #slide-3-2'), true, pos);
+    this.visibilityOn($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
     this.zoom($('#placeholder-4'), $('#animation-1 #slide-4'), .03, 1, pos);
-    this.visibility($('#placeholder-5-1'), $('#animation-1 #slide-5-1'), pos);
-    this.visibility($('#placeholder-5-2'), $('#animation-1 #slide-5-2'), pos);
-    this.visibility($('#placeholder-5-3'), $('#animation-1 #slide-5-3'), pos);
-    this.visibility($('#placeholder-6'), $('#animation-1 #slide-6'), pos);
+    this.visibility($('#placeholder-5-1'), $('#placeholder-6'), $('#animation-1 #slide-5-1'), true, pos);
+    this.visibility($('#placeholder-5-2'), $('#placeholder-6'), $('#animation-1 #slide-5-2'), true, pos);
+    this.visibility($('#placeholder-5-3'), $('#placeholder-6'), $('#animation-1 #slide-5-3'), true, pos);
+    this.visibilityOn($('#placeholder-6'), $('#animation-1 #slide-6'), pos);
     this.zoom($('#placeholder-6'), $('#animation-1 #slide-6'), .1, 1, pos);
-    this.visibility($('#placeholder-7-1'), $('#animation-1 #slide-7-1'), pos);
-    this.visibility($('#placeholder-7-2'), $('#animation-1 #slide-7-2'), pos);
-    this.visibility($('#placeholder-7-3'), $('#animation-1 #slide-7-3'), pos);
+    this.visibility($('#placeholder-7-1'), $('#placeholder-8'), $('#animation-1 #slide-7-1'), true, pos);
+    this.visibility($('#placeholder-7-2'), $('#placeholder-8'), $('#animation-1 #slide-7-2'), true, pos);
+    this.visibility($('#placeholder-7-3'), $('#placeholder-8'), $('#animation-1 #slide-7-3'), true, pos);
     this.fade($('#placeholder-8'), $('#animation-1 #slide-8'), 0, 1, pos);
-    this.visibility($('#placeholder-9-1'), $('#animation-1 #slide-9-1'), pos);
-    this.visibility($('#placeholder-9-2'), $('#animation-1 #slide-9-2'), pos);
-    this.visibility($('#placeholder-9-3'), $('#animation-1 #slide-9-3'), pos);
+    this.visibility($('#placeholder-9-1'), $('#placeholder-10'), $('#animation-1 #slide-9-1'), true, pos);
+    this.visibility($('#placeholder-9-2'), $('#placeholder-10'), $('#animation-1 #slide-9-2'), true, pos);
+    this.visibility($('#placeholder-9-3'), $('#placeholder-10'), $('#animation-1 #slide-9-3'), true, pos);
     this.fade($('#placeholder-10'), $('#animation-1 #slide-10'), 0, 1, pos);
-    this.visibility($('#placeholder-11'), $('#animation-1 #slide-11'), pos);
+    this.visibilityOn($('#placeholder-11-1'), $('#animation-1 #slide-11-1'), pos);
+    this.visibilityOn($('#placeholder-11-2'), $('#animation-1 #slide-11-2'), pos);
   }
 
   position(start: any, end: any, target: any, pos: number) {
@@ -70,8 +71,16 @@ export class ScrollService {
     }
   }
 
-  visibility(source: any, target: any, pos: number) {
-    target.css('visibility', pos >= source.offset().top - this.navHeight ? 'visible' : 'hidden');
+  visibility(start: any, end: any, target: any, option: boolean, pos: number) {
+    if (pos >= start.offset().top - this.navHeight && pos < end.offset().top - this.navHeight) {
+      target.css('visibility', option ? 'visible' : 'hidden');
+    } else {
+      target.css('visibility', option ? 'hidden' : 'visible');
+    }
+  }
+
+  visibilityOn(start: any, target: any, pos: number) {
+    target.css('visibility', pos >= start.offset().top - this.navHeight ? 'visible' : 'hidden');
   }
 
   zoom(source: any, target: any, initial: number, final: number, pos: number) {
