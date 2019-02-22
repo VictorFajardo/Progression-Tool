@@ -1,0 +1,30 @@
+@import "src/assets/scss/section.scss";
+
+
+section {
+    padding-top: 50px;
+    nav {
+        .content {
+            height: initial;
+            .title {
+                position: initial;
+                .label {
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+    .main {
+        .content {
+            margin-top: initial;
+            .row {
+                .copy {
+                    // padding-bottom: 80px;
+                }
+                text {
+                    padding: 30px 50px;
+                }
+            }
+        }
+    }
+}

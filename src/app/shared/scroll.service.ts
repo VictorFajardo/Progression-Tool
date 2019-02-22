@@ -9,7 +9,6 @@ export class ScrollService {
   // cont2 = start.offset().top;
   // timeZoom = 400; // distance in pixels
   navHeight = 70; // nav height
-  gap = 14;
 
   constructor() {
     // console.log($('#container-2').offset().top);
@@ -103,11 +102,13 @@ export class ScrollService {
   }
 
   menu(pos: number) {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i <= 2; i++) {
       // tslint:disable-next-line:max-line-length
-      if (pos >= $('app-section' + i).offset().top - this.navHeight && pos < (i < 2 ? $('app-section' + (i + 1)).offset().top - this.navHeight : $('app-footer').offset().top)) {
+      if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' .label').offset().top + $('app-section' + i + ' .label').outerHeight() - window.innerHeight / 2) : 0) && pos < (i < 2 ? Math.floor($('app-section' + (i + 1) + ' .label').offset().top + $('app-section' + (i + 1) + ' .label').outerHeight() - window.innerHeight / 2) : $('app-footer').offset().top)) {
         $('app-side-nav .nav-item.active').removeClass('active');
         $('app-side-nav .section-' + i).addClass('active');
+        // tslint:disable-next-line:max-line-length
+        // console.log('landing - section: ' + i + ' - pos: ' + pos + ' - dest: ', Math.floor($('app-section' + i + ' .label').offset().top + $('app-section' + i + ' .label').outerHeight() - window.innerHeight / 2));
       }
     }
   }

@@ -40,3 +40,11 @@ nav {
         }
     }
 }
+
+.line {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    border-bottom: 1px dotted #000;
+    z-index: 1000;;
+}

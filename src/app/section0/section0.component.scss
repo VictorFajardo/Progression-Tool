@@ -3,5 +3,14 @@
 section {
     nav {
         background: url('/assets/heroes/section0-hero.jpg') center top no-repeat;
+        .content {
+            .title {
+                .label {
+                    width: initial;
+                    height: initial;
+                    background-color: initial;
+                }
+            }
+        }
     }
 }
