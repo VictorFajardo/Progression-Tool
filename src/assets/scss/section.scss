@@ -131,9 +131,32 @@ section {
                 &.squares {
                     padding: 46px 0;
                 }
-                &:last-of-type .copy:last-of-type p:last-of-type {
+                .last {
                     padding-bottom: 50px;
                     border-bottom: 1px solid #b7b7b7;
+                }
+                .hint {
+                    position: absolute;
+                    display: none;
+                    p {
+                        background-color: #e7eeee;
+                    }
+                    &:before{
+                        content:'';
+                        display:block;
+                        width:0;
+                        height:0;
+                        position:absolute;
+                        
+                        border-bottom: 16px solid #000;
+                        border-left: 16px solid transparent; 
+                        border-right:16px solid transparent;
+                        left: 400px;
+                        top: -16px;
+                        // left:-8px;
+                        
+                        // top:7px;
+                    }
                 }
             }
         }

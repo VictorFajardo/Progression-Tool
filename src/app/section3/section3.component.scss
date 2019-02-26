@@ -1,0 +1,28 @@
+@import "src/assets/scss/section.scss";
+
+section {
+    // padding-top: 50px;
+    nav {
+        background: url('/assets/heroes/section3-hero.jpg') center top no-repeat;
+        .content {
+            .title {
+                .text {
+                    padding: 39px 44px 37px;
+                }
+            }
+        }
+    }
+    .main {
+        .content {
+            // margin-top: initial;
+            .row {
+                .copy {
+                    // padding: 0 50px;
+                }
+                text {
+                    padding: 30px 50px;
+                }
+            }
+        }
+    }
+}

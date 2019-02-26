@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TooltipService } from '../shared/tooltip.service';
 
 @Component({
   selector: 'app-section1',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Section1Component implements OnInit {
 
-  constructor() { }
+  constructor(private tooltip: TooltipService) { }
 
   ngOnInit() {
   }
 
+  showTooltip($event: Event) {
+    this.tooltip.show($event);
+  }
 }

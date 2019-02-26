@@ -39,3 +39,21 @@ p {
         font-family: $lato-heavy;
     }
 }
+ul {
+    list-style: none;
+    margin-left: -20px;
+    li {
+        p {
+            display: inline-block;
+            margin-left: 15px;
+        }
+        &:before {
+            content: "\2022";
+            color: #44a691;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+          }
+    }
+}

@@ -1,0 +1,43 @@
+@import "src/assets/scss/section.scss";
+
+section {
+    // padding-top: 50px;
+    nav {
+        background: url('/assets/heroes/section5-hero.jpg') center top no-repeat;
+        .content {
+            // height: initial;
+            .title {
+                // position: initial;
+                .text {
+                    background-color: #666;
+                    h1 {
+                        color: #fff;
+                    }
+                }
+                .label {
+                    // margin-left: 50px;
+                }
+            }
+        }
+    }
+    .main {
+        background-color: #666;
+        .content {
+            // margin-top: initial;
+            .row {
+                p {
+                color: #fff;
+                }
+                .copy {
+                    // padding-bottom: 80px;
+                }
+                text {
+                    padding: 30px 50px;
+                }
+                .square:nth-child(2) {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}

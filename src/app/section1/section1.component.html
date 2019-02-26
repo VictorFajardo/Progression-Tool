@@ -20,15 +20,18 @@
   <div class="container-fluid main">
     <div class="row overflow-hidden">
       <div class="container content">
-        <div class="row justify-content-center">
+        <div class="row position-relative justify-content-center">
           <div class="text copy col-9">
             <p>Before learning about how IPF progresses, let’s start by defining what progression is. Progression means
               that IPF will continue to worsen over time and cause permanent and irreversible damage to the lungs. This
               progression can present itself many different ways.</p>
             <br>
-            <p>Some people may notice worsening symptoms, see changes in <a href="#">tests</a>, like high-resolution computed
+            <p>Some people may notice worsening symptoms, see changes in <a [routerLink]="" hint-data="hint-1" (click)="showTooltip($event)">tests</a>, like high-resolution computed
               tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
               may not notice any signs of progression for a long time.</p>
+          </div>
+          <div class="hint col-8" id="hint-1">
+            <p>Lorem...</p>
           </div>
         </div>
         <div class="row justify-content-center squares">
@@ -44,10 +47,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="text copy col-9">
-            <p>Some people may notice worsening symptoms, see changes in <a href="#">tests</a>, like high-resolution computed
-              tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
-              may not notice any signs of progression for a long time.</p>
-            <p>No matter how IPF affects you, it’s important to understand that <strong>disease is always progressing at varying rates, which is why it’s so important to take action early.</strong></p>
+            <p class="last">No matter how IPF affects you, it’s important to understand that <strong>disease is always progressing at varying rates, which is why it’s so important to take action early.</strong></p>
           </div>
         </div>
       </div>
