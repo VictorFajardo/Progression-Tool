@@ -15,41 +15,58 @@ export class ScrollService {
    }
 
   scrollProgress(pos: number) {
-    // console.log('pos:', pos);
+    console.log('pos:', pos);
 
     // Menu Items
     this.menu(pos);
 
     // Animations
-    this.position($('#container-2'), $('#placeholder-12'), $('#animation-1'), pos);
+    this.position($('#container-2-1'), $('#animation-2-1'), pos);
 
     // Sub Animations
-    this.zoom($('#placeholder-1'), $('#animation-1 #slide-1'), 0.86, 1, pos);
-    this.fade($('#placeholder-2'), $('#animation-1 #slide-2'), 0, 1, pos);
-    this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-1 #slide-3-1'), true, pos);
-    this.visibility($('#placeholder-3-2'), $('#placeholder-4'), $('#animation-1 #slide-3-2'), true, pos);
-    this.visibilityOn($('#placeholder-4'), $('#animation-1 #slide-4'), pos);
-    this.zoom($('#placeholder-4'), $('#animation-1 #slide-4'), .03, 1, pos);
-    this.visibility($('#placeholder-5-1'), $('#placeholder-6'), $('#animation-1 #slide-5-1'), true, pos);
-    this.visibility($('#placeholder-5-2'), $('#placeholder-6'), $('#animation-1 #slide-5-2'), true, pos);
-    this.visibility($('#placeholder-5-3'), $('#placeholder-6'), $('#animation-1 #slide-5-3'), true, pos);
-    this.visibilityOn($('#placeholder-6'), $('#animation-1 #slide-6'), pos);
-    this.zoom($('#placeholder-6'), $('#animation-1 #slide-6'), .1, 1, pos);
-    this.visibility($('#placeholder-7-1'), $('#placeholder-8'), $('#animation-1 #slide-7-1'), true, pos);
-    this.visibility($('#placeholder-7-2'), $('#placeholder-8'), $('#animation-1 #slide-7-2'), true, pos);
-    this.visibility($('#placeholder-7-3'), $('#placeholder-8'), $('#animation-1 #slide-7-3'), true, pos);
-    this.fade($('#placeholder-8'), $('#animation-1 #slide-8'), 0, 1, pos);
-    this.visibility($('#placeholder-9-1'), $('#placeholder-10'), $('#animation-1 #slide-9-1'), true, pos);
-    this.visibility($('#placeholder-9-2'), $('#placeholder-10'), $('#animation-1 #slide-9-2'), true, pos);
-    this.visibility($('#placeholder-9-3'), $('#placeholder-10'), $('#animation-1 #slide-9-3'), true, pos);
-    this.fade($('#placeholder-10'), $('#animation-1 #slide-10'), 0, 1, pos);
-    this.visibilityOn($('#placeholder-11-1'), $('#animation-1 #slide-11-1'), pos);
-    this.visibilityOn($('#placeholder-11-2'), $('#animation-1 #slide-11-2'), pos);
+    this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
+    this.fade($('#placeholder-2'), $('#animation-2-1 #slide-2'), 0, 1, pos);
+    this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-2-1 #slide-3-1'), true, pos);
+    this.visibility($('#placeholder-3-2'), $('#placeholder-4'), $('#animation-2-1 #slide-3-2'), true, pos);
+    this.visibilityOn($('#placeholder-4'), $('#animation-2-1 #slide-4'), pos);
+    this.zoom($('#placeholder-4'), $('#animation-2-1 #slide-4'), .03, 1, pos);
+    this.visibility($('#placeholder-5-1'), $('#placeholder-6'), $('#animation-2-1 #slide-5-1'), true, pos);
+    this.visibility($('#placeholder-5-2'), $('#placeholder-6'), $('#animation-2-1 #slide-5-2'), true, pos);
+    this.visibility($('#placeholder-5-3'), $('#placeholder-6'), $('#animation-2-1 #slide-5-3'), true, pos);
+    this.visibilityOn($('#placeholder-6'), $('#animation-2-1 #slide-6'), pos);
+    this.zoom($('#placeholder-6'), $('#animation-2-1 #slide-6'), .1, 1, pos);
+    this.visibility($('#placeholder-7-1'), $('#placeholder-8'), $('#animation-2-1 #slide-7-1'), true, pos);
+    this.visibility($('#placeholder-7-2'), $('#placeholder-8'), $('#animation-2-1 #slide-7-2'), true, pos);
+    this.visibility($('#placeholder-7-3'), $('#placeholder-8'), $('#animation-2-1 #slide-7-3'), true, pos);
+    this.fade($('#placeholder-8'), $('#animation-2-1 #slide-8'), 0, 1, pos);
+    this.visibility($('#placeholder-9-1'), $('#placeholder-10'), $('#animation-2-1 #slide-9-1'), true, pos);
+    this.visibility($('#placeholder-9-2'), $('#placeholder-10'), $('#animation-2-1 #slide-9-2'), true, pos);
+    this.visibility($('#placeholder-9-3'), $('#placeholder-10'), $('#animation-2-1 #slide-9-3'), true, pos);
+    this.fade($('#placeholder-10'), $('#animation-2-1 #slide-10'), 0, 1, pos);
+    this.visibilityOn($('#placeholder-11-1'), $('#animation-2-1 #slide-11-1'), pos);
+    this.visibilityOn($('#placeholder-11-2'), $('#animation-2-1 #slide-11-2'), pos);
+
+    // Animations
+    this.position($('#container-2-2'), $('#animation-2-2'), pos);
+
+    // Sub Animations
+    this.visibility($('#placeholder-13-1'), $('#placeholder-14'), $('#animation-2-2 #slide-13-1'), true, pos);
+    this.visibility($('#placeholder-13-2'), $('#placeholder-14'), $('#animation-2-2 #slide-13-2'), true, pos);
+    this.fade($('#placeholder-14'), $('#animation-2-2 #slide-14'), 0, 1, pos);
+    this.visibility($('#placeholder-15-1'), $('#placeholder-16'), $('#animation-2-2 #slide-15-1'), true, pos);
+    this.visibility($('#placeholder-15-2'), $('#placeholder-16'), $('#animation-2-2 #slide-15-2'), true, pos);
+    this.visibility($('#placeholder-15-3'), $('#placeholder-16'), $('#animation-2-2 #slide-15-3'), true, pos);
+    this.visibility($('#placeholder-15-4'), $('#placeholder-16'), $('#animation-2-2 #slide-15-4'), true, pos);
+    this.fade($('#placeholder-16'), $('#animation-2-2 #slide-16'), 0, 1, pos);
+    this.visibilityOn($('#placeholder-17-1'), $('#animation-2-2 #slide-17-1'), pos);
+    this.visibilityOn($('#placeholder-17-2'), $('#animation-2-2 #slide-17-2'), pos);
+    this.visibilityOn($('#placeholder-17-3'), $('#animation-2-2 #slide-17-3'), pos);
   }
 
-  position(start: any, end: any, target: any, pos: number) {
+  position(source: any, target: any, pos: number) {
+    // console.log(pos, source, target);
     // Start Point
-    if (pos >= start.offset().top - this.navHeight) {
+    if (pos >= source.offset().top - this.navHeight) {
       if (!target.hasClass('fixed')) {
         target.addClass('fixed');
       }
@@ -59,7 +76,7 @@ export class ScrollService {
       }
     }
     // End Point
-    if (pos >= end.offset().top - this.navHeight) {
+    if (pos >= source.children().last().offset().top - this.navHeight) {
       if (!target.hasClass('absolute')) {
         target.addClass('absolute');
       }
@@ -102,7 +119,7 @@ export class ScrollService {
   }
 
   menu(pos: number) {
-    for (let i = 0; i <= 3; i++) {
+    for (let i = 0; i <= 5; i++) {
       // tslint:disable-next-line:max-line-length
       if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' .label').offset().top + $('app-section' + i + ' .label').outerHeight() - window.innerHeight / 2) : 0) && pos < (i < 2 ? Math.floor($('app-section' + (i + 1) + ' .label').offset().top + $('app-section' + (i + 1) + ' .label').outerHeight() - window.innerHeight / 2) : $('app-footer').offset().top)) {
         $('app-side-nav .nav-item.active').removeClass('active');

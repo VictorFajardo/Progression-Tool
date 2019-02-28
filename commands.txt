@@ -1,0 +1,1 @@
+ng build --base-href /progression-tool/ --deploy-url /progression-tool/ --prod

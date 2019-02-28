@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: Event) {
-    const scrollOffset = $event.srcElement.children[0].scrollTop;
+    const scrollOffset = $(window).scrollTop();
     this.scroll.scrollProgress(scrollOffset);
   }
 

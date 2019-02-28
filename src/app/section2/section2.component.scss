@@ -2,7 +2,52 @@
 
 section {
     padding-top: 80px;
+    padding-bottom: 50px;
     nav {
         background: url('/assets/heroes/section2-hero.jpg') center top no-repeat;
+    }
+    .main {
+        .content {
+            .row {
+                #animation-2-1, #animation-2-2 {
+                    position: absolute;
+                    top: 0;
+                    img {
+                        width: 100%;
+                        &:not(:first-of-type) {
+                            position: absolute;
+                            top : 0;
+                            left: 0;
+                        }
+                    }
+                    #slide-1 {
+                        transform: scale(0.86);
+                    }
+                    #slide-4 {
+                        transform-origin: 23.2% 80%;
+                        transform: scale(0.03);
+                    }
+                    #slide-6 {
+                        transform-origin: 62.7% 88.1%;
+                        transform: scale(0.1);
+                    }
+                    &.fixed {
+                        position: fixed;
+                        top: 70px;
+                    }
+                    &.absolute {
+                        position: absolute;
+                        top: unset;
+                        bottom: 0;
+                    }
+                }
+                #animation-2-1-end, #animation-2-2-end {
+                    height: unset;
+                }
+                #animation-2-2-end {
+                    // padding-bottom: 50px;
+                }
+            }
+        }
     }
 }

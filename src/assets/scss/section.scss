@@ -1,6 +1,7 @@
 @import "src/assets/scss/variables.scss";
 
 section {
+    overflow: hidden;
     nav {
         // background: url('/assets/section2-bg.jpg') center top no-repeat;
         background-size: cover !important;
@@ -43,52 +44,11 @@ section {
             .row {
                 .placeholder {
                     height: 800px;
-                    border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
-                    border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
-                    margin: -1px auto; //dev
+                    // border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
+                    // border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
+                    // margin: -1px auto; //dev
                     &.step {
                         height: 200px;
-                    }
-                }
-                #placeholder-5 {
-                    height: unset;
-                    position: relative;
-                    img {
-                        width: 100%
-                    }
-                }
-                #animation-1 {
-                    position: absolute;
-                    top: 0;
-                    img {
-                        width: 100%;
-                        &:not(:first-of-type) {
-                            position: absolute;
-                            top : 0;
-                            left: 0;
-                        }
-                    }
-                    #slide-1 {
-                        transform: scale(0.86);
-                    }
-                    #slide-4 {
-                        // opacity: 1;
-                        transform-origin: 23.2% 80%;
-                        transform: scale(0.03);
-                    }
-                    #slide-6 {
-                        // opacity: 1;
-                        transform-origin: 62.7% 88.1%;
-                        transform: scale(0.1);
-                    }
-                    &.fixed {
-                        position: fixed;
-                        top: 70px;
-                    }
-                    &.absolute {
-                        position: absolute;
-                        top: unset;
-                        bottom: 0;
                     }
                 }
                 .text {

@@ -9,12 +9,18 @@ export class TooltipService {
 
   show($event: Event) {
     const element = $($event.target);
-    const hint = $('#' + element.attr('hint-data'));
-    hint.show();
+    // const hint = $('#' + element.attr('hint-data'));
+    // hint.show();
     // const hintArrow = $(hint + ':after');
     // console.log('tooltip opened', $($event.target).position());
     // console.log(element, hint);
-    hint.css('top', element.position().top + 40);
-
+    // hint.css('top', element.position().top + 40);
+    if (!element.hasClass('active')) {
+      element.addClass('active');
+    } else {
+      element.removeClass('active');
+    }
   }
 }
+
+
