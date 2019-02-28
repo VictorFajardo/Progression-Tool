@@ -16,4 +16,8 @@ export class Section1Component implements OnInit {
   showTooltip($event: Event) {
     this.tooltip.show($event);
   }
+
+  hideTooltip($event: Event) {
+    this.tooltip.hide($event);
+  }
 }

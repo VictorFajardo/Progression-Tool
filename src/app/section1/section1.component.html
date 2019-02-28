@@ -26,12 +26,27 @@
               that IPF will continue to worsen over time and cause permanent and irreversible damage to the lungs. This
               progression can present itself many different ways.</p>
             <br>
-            <p>Some people may notice worsening symptoms, see changes in <a [routerLink]="" class="pluck" hint-data="hint-1" (click)="showTooltip($event)">tests <img src="/assets/icons/plus.png" alt=""></a>, like high-resolution computed
+            <p>Some people may notice worsening symptoms, see changes in <a [routerLink]="" class="pluck" hint-data="hint-1" (click)="showTooltip($event.target)">tests <img src="/assets/icons/plus.png" alt=""></a>, like high-resolution computed
               tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
               may not notice any signs of progression for a long time.</p>
           </div>
-          <div class="hint col-8" id="hint-1">
-            <p>Lorem...</p>
+          <div class="hint col-9" id="hint-1">
+            <div class="arrow"></div>
+            <div class="box">
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <h4>HELPFUL HINT</h4>
+              <p><strong class="orange">Tests</strong> used to detect IPF progression include:</p>
+              <ul>
+                <li>HRCT scans</li>
+                <li>Pulse oximetry (measured at rest and with exertion)</li>
+                <li>Exercise/walking tests</li>
+                <li>Spirometry (forced vital capacity [FVC]) </li>
+                <li>DLCO</li>
+                <li>Lung volume measurement (total lung capacity [TLC])</li>
+                <li>Arterial blood gas testing</li>
+                <li>Questionnaire, like the University of California San Diego Shortness of Breath Questionnaire</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center squares">
@@ -53,4 +68,16 @@
       </div>
     </div>
   </div>
+  <footer class="container-fluid">
+    <div class="row">
+      <div class="container content">
+        <div class="row justify-content-center">
+          <div class="callout col-9">
+            <h3>Take action by reading about a treatment that may help slow IPF progression.</h3>
+            <a href="#">Read More Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </section>

@@ -88,35 +88,84 @@ section {
                         margin-right: -12.604117%;
                     }
                 }
-                &.squares {
-                    padding: 46px 0;
-                }
                 .last {
                     padding-bottom: 50px;
                     border-bottom: 1px solid #b7b7b7;
                 }
                 .hint {
                     position: absolute;
+                    z-index: 100;
                     display: none;
-                    p {
-                        background-color: #e7eeee;
-                    }
-                    &:before{
-                        content:'';
-                        display:block;
-                        width:0;
-                        height:0;
-                        position:absolute;
-                        
-                        border-bottom: 16px solid #000;
-                        border-left: 16px solid transparent; 
-                        border-right:16px solid transparent;
-                        left: 400px;
+                    padding: 0 55px;
+                    .arrow {
+                        position: absolute;
+                        height: 16px;
+                        width: 32px;
                         top: -16px;
-                        // left:-8px;
-                        
-                        // top:7px;
+                        left: 0px;
+                        background: url('/assets/icons/tooltip-arrow.png') center top no-repeat;
+                        z-index: 1;
                     }
+                    .box {
+                        position: relative;
+                        background-color: #e7eeee;
+                        padding: 20px 30px;
+                        font-size: 15px;
+                        color: initial;
+                        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                        p {
+                            margin-bottom: 0;
+                            color: initial;                            
+                        }
+                        ul {
+                            li {
+                                line-height: initial;
+                                &:before {
+                                    color: initial;
+                                }
+                            }
+                        }
+                        .tooltip-close {
+                            position: absolute;
+                            height: 33px;
+                            width: 33px;
+                            top: 20px;
+                            right: 20px;
+                            background: url('/assets/icons/tooltip-close.png') center top no-repeat;
+
+                        }
+                    }
+                }
+                &.squares {
+                    padding: 46px 0;
+                }
+            }
+        }
+    }
+    footer {
+        // margin-top: 80px;
+        background-color: #44a792;
+        .content {
+            .callout {
+                padding: 0 25px;
+                h3 {
+                    display: inline-block;
+                    font-size: 24px;
+                    color: #fff;
+                    line-height: 1.25;
+                    margin: 0;
+                    vertical-align: middle;
+                    width: 71.65%;            
+                }
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 50px;
+                    background-color: $orange;
+                    color: #fff;
+                    margin: 25px 0;
+                    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, .5);
+                    width: 28.35%;
                 }
             }
         }

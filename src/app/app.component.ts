@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from './shared/scroll.service';
 import { WindowService } from './shared/window.service';
+import { TooltipService } from './shared/tooltip.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
 
   title = 'progression-tool';
 
-  constructor(private scroll: ScrollService, private window: WindowService) { }
+  constructor(private scroll: ScrollService, private window: WindowService, private tooltip: TooltipService) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: Event) {
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
   onResize($event: Event) {
     const screenWidth = window.innerWidth;
     this.window.windowSize(screenWidth);
+    this.tooltip.resize();
   }
 
   ngOnInit() {
