@@ -18,9 +18,6 @@ section {
         .content {
             margin-top: initial;
             .row {
-                .copy {
-                    // padding-bottom: 80px;
-                }
                 text {
                     padding: 30px 50px;
                 }
@@ -29,5 +26,16 @@ section {
     }
     footer {
         margin-top: 80px;
+        .content {
+            .callout {
+                h3 {
+                    width: 71.65%;            
+                }
+                a {
+                    width: 28.35%;
+                    margin: 28px 0;
+                }
+            }
+        }
     }
 }

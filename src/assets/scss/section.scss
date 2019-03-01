@@ -88,6 +88,22 @@ section {
                         margin-right: -12.604117%;
                     }
                 }
+                .quote {
+                    .box {
+                        padding: 40px 64px;
+                        border: 2px solid $green2;
+                        background-color: #fff;
+                        p {
+                            font: 24px/1.75 $lora;
+                            color: $green2;
+                            text-align: center;
+                            margin-bottom: 0;
+                            span {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
                 .last {
                     padding-bottom: 50px;
                     border-bottom: 1px solid #b7b7b7;
@@ -154,18 +170,16 @@ section {
                     color: #fff;
                     line-height: 1.25;
                     margin: 0;
-                    vertical-align: middle;
-                    width: 71.65%;            
+                    vertical-align: middle;    
                 }
                 a {
                     display: inline-block;
                     text-align: center;
-                    line-height: 50px;
+                    // line-height: 50px;
                     background-color: $orange;
+                    font: 20px/50px $lato-heavy;
                     color: #fff;
-                    margin: 25px 0;
-                    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, .5);
-                    width: 28.35%;
+                    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, .5)
                 }
             }
         }

@@ -13,6 +13,9 @@ section {
         }
     }
     .main {
+        padding-bottom: 250px;
+        background: url('/assets/heroes/section3-footer.jpg') center bottom no-repeat;
+        background-size: cover !important;
         .content {
             // margin-top: initial;
             .row {
@@ -21,6 +24,20 @@ section {
                 }
                 text {
                     padding: 30px 50px;
+                }
+            }
+        }
+    }
+    footer {
+        // margin-top: 250px;
+        .content {
+            .callout {
+                h3 {
+                    margin-top: 48px;         
+                }
+                a {
+                    width: 59.7%;
+                    margin: 28px 0 48px;
                 }
             }
         }
