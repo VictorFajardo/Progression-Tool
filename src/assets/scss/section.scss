@@ -90,9 +90,11 @@ section {
                 }
                 .quote {
                     .box {
-                        padding: 40px 64px;
                         border: 2px solid $green2;
                         background-color: #fff;
+                        box-shadow: 8px 10px 0px 0px rgba(15, 115, 122, .4);
+                        margin-right: 8px;
+                        margin-bottom: 10px;
                         p {
                             font: 24px/1.75 $lora;
                             color: $green2;
@@ -125,10 +127,11 @@ section {
                     .box {
                         position: relative;
                         background-color: #e7eeee;
-                        padding: 20px 30px;
+                        padding: 20px 70px 20px 30px;
                         font-size: 15px;
                         color: initial;
                         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                        border-radius: 8px;
                         p {
                             margin-bottom: 0;
                             color: initial;                            
@@ -175,7 +178,6 @@ section {
                 a {
                     display: inline-block;
                     text-align: center;
-                    // line-height: 50px;
                     background-color: $orange;
                     font: 20px/50px $lato-heavy;
                     color: #fff;

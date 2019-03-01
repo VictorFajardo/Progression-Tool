@@ -15,15 +15,20 @@ export class ScrollService {
    }
 
   scrollProgress(pos: number) {
-    console.log('pos:', pos);
+    // console.log('pos:', pos);
 
     // Menu Items
     this.menu(pos);
 
-    // Animations
-    this.position($('#container-2-1'), $('#animation-2-1'), pos);
-
+    /* Section 1 */
     // Sub Animations
+    this.fadeMid($('#square-1'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#square-2'), 50, 100, 0, 1, pos);
+    this.fadeMid($('#square-3'), 0, 100, 0, 1, pos);
+
+    /* Section 2 */
+    // Section 2-1
+    this.position($('#container-2-1'), $('#animation-2-1'), pos);
     this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
     this.fade($('#placeholder-2'), $('#animation-2-1 #slide-2'), 0, 1, pos);
     this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-2-1 #slide-3-1'), true, pos);
@@ -45,11 +50,8 @@ export class ScrollService {
     this.fade($('#placeholder-10'), $('#animation-2-1 #slide-10'), 0, 1, pos);
     this.visibilityOn($('#placeholder-11-1'), $('#animation-2-1 #slide-11-1'), pos);
     this.visibilityOn($('#placeholder-11-2'), $('#animation-2-1 #slide-11-2'), pos);
-
-    // Animations
+    // Section 2-1
     this.position($('#container-2-2'), $('#animation-2-2'), pos);
-
-    // Sub Animations
     this.visibility($('#placeholder-13-1'), $('#placeholder-14'), $('#animation-2-2 #slide-13-1'), true, pos);
     this.visibility($('#placeholder-13-2'), $('#placeholder-14'), $('#animation-2-2 #slide-13-2'), true, pos);
     this.fade($('#placeholder-14'), $('#animation-2-2 #slide-14'), 0, 1, pos);
@@ -61,6 +63,18 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-17-1'), $('#animation-2-2 #slide-17-1'), pos);
     this.visibilityOn($('#placeholder-17-2'), $('#animation-2-2 #slide-17-2'), pos);
     this.visibilityOn($('#placeholder-17-3'), $('#animation-2-2 #slide-17-3'), pos);
+
+    /* Section 4 */
+    this.fadeMid($('#square-4'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#square-5'), 50, 100, 0, 1, pos);
+    this.fadeMid($('#square-6'), 0, 100, 0, 1, pos);
+    this.fadeMid($('#square-7'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#square-8'), 50, 100, 0, 1, pos);
+    this.fadeMid($('#square-9'), 0, 100, 0, 1, pos);
+    this.fadeMid($('#ladder-step1'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#ladder-step2'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#ladder-step3'), 100, 100, 0, 1, pos);
+    this.fadeMid($('#ladder-step4'), 100, 100, 0, 1, pos);
   }
 
   position(source: any, target: any, pos: number) {
@@ -115,6 +129,15 @@ export class ScrollService {
       target.css('opacity', (initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()));
     } else {
       target.css('opacity', pos < source.offset().top ? initial : final);
+    }
+  }
+
+  fadeMid(target: any, gap: number, length: number, initial: number, final: number, pos: number) {
+    if (pos >= target.offset().top - gap - window.innerHeight / 2 && pos <= target.offset().top - gap - window.innerHeight / 2 + length) {
+      // console.log(initial + (final - initial) * (pos - target.offset().top + gap + window.innerHeight / 2) / length);
+      target.css('opacity', (initial + (final - initial) * (pos - target.offset().top + gap + window.innerHeight / 2) / length));
+    } else {
+      target.css('opacity', pos < target.offset().top - gap - window.innerHeight / 2 ? initial : final);
     }
   }
 

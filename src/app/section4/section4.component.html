@@ -22,49 +22,130 @@
       <div class="container content" id="container-3">
         <div class="row justify-content-center">
           <div class="text copy col-9">
-            <p>As IPF scarring and honeycombs continue to form, you will begin to feel their effects on your body, including symptoms like:</p>
-            <br/>
+            <p>As IPF scarring and honeycombs continue to form, you will begin to feel their effects on your body,
+              including symptoms like:</p>
+            <br />
             <ul>
-              <li><p>shortness of breath</p></li>
-              <li><p>a dry, hacking cough</p></li>
-              <li><p>rapid, shallow breathing</p></li>
-              <li><p>fatigue</p></li>
-              <li><p>gradual weight loss</p></li>
-              <li><p>aching muscles and joints</p></li>
-              <li><p>widening and rounding of the fingertips or toes</p></li>
+              <li>
+                <p>shortness of breath</p>
+              </li>
+              <li>
+                <p>a dry, hacking cough</p>
+              </li>
+              <li>
+                <p>rapid, shallow breathing</p>
+              </li>
+              <li>
+                <p>fatigue</p>
+              </li>
+              <li>
+                <p>gradual weight loss</p>
+              </li>
+              <li>
+                <p>aching muscles and joints</p>
+              </li>
+              <li>
+                <p>widening and rounding of the fingertips or toes</p>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="row justify-content-center squares">
-          <div class="col square left">
+        <div class="row position-relative justify-content-center squares">
+          <div class="col square left" id="square-4">
             <img src="assets/squares/image004.jpg" alt="">
           </div>
-          <div class="col square">
+          <div class="col square" id="square-5">
             <img src="assets/squares/image005.jpg" alt="">
           </div>
-          <div class="col square right">
+          <div class="col square right" id="square-6">
             <img src="assets/squares/image006.jpg" alt="">
           </div>
-          <div class="col square left">
+          <div class="col square left" id="square-7">
             <img src="assets/squares/image007.jpg" alt="">
           </div>
-          <div class="col square">
+          <div class="col square" id="square-8">
             <img src="assets/squares/image008.jpg" alt="">
           </div>
-          <div class="col square right">
+          <div class="col square right" id="square-9">
             <img src="assets/squares/image009.jpg" alt="">
+          </div>
+          <div class="text block-text col-10">
+            <p>Symptoms may worsen to the point that they take a toll on your quality of life—from your emotional state to your ability to complete everyday tasks.</p>
           </div>
         </div>
         <div class="row justify-content-center">
+          <div class="quote col-10">
+            <div class="box">
+              <p>“I began having trouble doing simple things. I could shop for my groceries without any problem, but
+                bringing them in the house left me huffing and puffing. I needed to rest before I could put my
+                groceries away. Any type of exercise that required a little more effort caused me to lose my breath.”</p>
+              <br />
+              <p>&mdash; Gene, <span>PERSON LIVING WITH THE IPF</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="row position-relative justify-content-center">
           <div class="text copy col-9">
-            <p>Pulmonologists will track IPF’s effect on the body with certain <a href="" class="pluck">tests</a>, like HRCT scans, forced vital capacity (FVC), and walking tests.</p>
-            <br/>
-            <p>While these tests can help provide a clearer picture of how IPF is progressing, remember that one single test may not tell the whole story. <strong>Even if one test result remains the same, IPF may still be progressing.</strong></p>
-            <br/>
-            <p>Additionally, it’s important to understand that test results aren’t just numbers on a chart—they may help explain why you’re feeling a certain way. </p>
-            <br/>
-            <p>For example, <a href="" class="pluck">FVC</a> is related to your ability to be physically active. One study found that a 1% loss in FVC equates to <strong>60 fewer steps</strong> per day. In other words, test results could help explain or predict the impact of IPF on your daily life.
+            <p>Pulmonologists will track IPF’s effect on the body with certain <a [routerLink]="" hint-data="hint-2"
+                (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like HRCT
+              scans, forced vital capacity (FVC), and walking tests.</p>
+            <br />
+            <p>While these tests can help provide a clearer picture of how IPF is progressing, remember that one single
+              test may not tell the whole story. <strong>Even if one test result remains the same, IPF may still be
+                progressing.</strong></p>
+            <br />
+            <p>Additionally, it’s important to understand that test results aren’t just numbers on a chart—they may
+              help explain why you’re feeling a certain way. </p>
+            <br />
+            <p>For example, <a [routerLink]="" hint-data="hint-3" (click)="showTooltip($event.target)">FVC <img src="/assets/icons/plus.png"
+                  alt=""></a> is related to your ability to be physically active. One study found that a 1% loss in FVC
+              equates to <strong>60 fewer steps</strong> per day. In other words, test results could help explain or
+              predict the impact of IPF on your daily life.
             </p>
+          </div>
+          <div class="ladder">
+            <img src="/assets/elements/ladder-base.jpg" alt="">
+            <div class="ladder-steps">
+              <div class="ladder-step" id="ladder-step1">
+                <img src="/assets/elements/ladder-step1.png" alt="">
+              </div>
+              <div class="ladder-step" id="ladder-step2">
+                <img src="/assets/elements/ladder-step2.png" alt="">
+              </div>
+              <div class="ladder-step" id="ladder-step3">
+                <img src="/assets/elements/ladder-step3.png" alt="">
+              </div>
+              <div class="ladder-step" id="ladder-step4">
+                <img src="/assets/elements/ladder-step4.png" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="hint col-9" id="hint-2">
+            <div class="arrow"></div>
+            <div class="box">
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <h4>HELPFUL HINT</h4>
+              <p><strong class="orange">Tests</strong> used to detect IPF progression include:</p>
+              <ul>
+                <li>HRCT scans</li>
+                <li>Pulse oximetry (measured at rest and with exertion)</li>
+                <li>Exercise/walking tests</li>
+                <li>Spirometry (forced vital capacity [FVC]) </li>
+                <li>DLCO</li>
+                <li>Lung volume measurement (total lung capacity [TLC])</li>
+                <li>Arterial blood gas testing</li>
+                <li>Questionnaire, like the University of California San Diego Shortness of Breath Questionnaire</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hint col-9" id="hint-3">
+            <div class="arrow"></div>
+            <div class="box">
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <h4>HELPFUL HINT</h4>
+              <p><strong class="orange">Forced vital capacity (FVC)</strong> is a measure of the amount of air you exhale after you
+                take a deep breath and blow out as hard as possible.</p>
+            </div>
           </div>
         </div>
       </div>

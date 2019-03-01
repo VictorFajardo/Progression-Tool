@@ -18,12 +18,14 @@ section {
         background-size: cover !important;
         .content {
             // margin-top: initial;
-            .row {
-                .copy {
-                    // padding: 0 50px;
-                }
+            .row {       
                 text {
                     padding: 30px 50px;
+                }
+                .quote {
+                    .box {
+                        padding: 40px 64px;
+                    }
                 }
             }
         }

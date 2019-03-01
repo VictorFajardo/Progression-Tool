@@ -13,6 +13,7 @@ export class TooltipService {
     const hint = $('#' + element.attr('hint-data'));
     hint.show();
     this.positioning(element, hint);
+    console.log('here');
   }
 
   hide($target: any) {
