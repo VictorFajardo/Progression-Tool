@@ -78,12 +78,11 @@ export class ScrollService {
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
-    // this.visibility($('#placeholder-19-2'), $('#placeholder-20'), $('#animation-3-1 #slide-19-2'), true, pos);
-    // this.visibility($('#placeholder-19-3'), $('#placeholder-20'), $('#animation-3-1 #slide-19-3'), true, pos);
-    // this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
-    // this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
-    // this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
-
+    this.visibilityOn($('#placeholder-27'), $('#animation-3-3 #slide-27'), pos);
+    this.fade($('#placeholder-28'), $('#animation-3-3 #slide-28'), 0, 1, pos);
+    this.visibilityOn($('#placeholder-29'), $('#animation-3-3 #slide-29'), pos);
+    this.fade($('#placeholder-29'), $('#animation-3-3 #slide-30'), 0, 1, pos);
+    this.fade($('#placeholder-31'), $('#animation-3-3 #slide-31'), 0, 1, pos);
 
     /* Section 4 */
     this.fadeMid($('#square-4'), 100, 100, 0, 1, pos);
