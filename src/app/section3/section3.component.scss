@@ -46,6 +46,17 @@ section {
                 #animation-3-1-end, #animation-3-2-end, #animation-3-3-end {
                     height: unset;
                 }
+                .block-text {
+                    .big {
+                        font: 24px/42px $lora;
+                    }
+                }
+                .quote {
+                    margin: 34px 0 80px;
+                    .box {
+                        padding: 36px 50px;
+                    }
+                }
             }
         }
     }

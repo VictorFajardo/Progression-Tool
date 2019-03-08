@@ -162,13 +162,11 @@ export class ScrollService {
   }
 
   menu(pos: number) {
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 6; i++) {
       // tslint:disable-next-line:max-line-length
       if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' .label').offset().top + $('app-section' + i + ' .label').outerHeight() - window.innerHeight / 2) : 0) && pos < (i < 2 ? Math.floor($('app-section' + (i + 1) + ' .label').offset().top + $('app-section' + (i + 1) + ' .label').outerHeight() - window.innerHeight / 2) : $('app-footer').offset().top)) {
         $('app-side-nav .nav-item.active').removeClass('active');
         $('app-side-nav .section-' + i).addClass('active');
-        // tslint:disable-next-line:max-line-length
-        // console.log('landing - section: ' + i + ' - pos: ' + pos + ' - dest: ', Math.floor($('app-section' + i + ' .label').offset().top + $('app-section' + i + ' .label').outerHeight() - window.innerHeight / 2));
       }
     }
   }
