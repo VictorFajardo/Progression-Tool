@@ -15,17 +15,36 @@ section {
     .main {
         padding-bottom: 250px;
         background: url('/assets/heroes/section3-footer.jpg') center bottom no-repeat;
-        background-size: cover !important;
+        background-size: 100%;
         .content {
             // margin-top: initial;
-            .row {       
-                text {
-                    padding: 30px 50px;
-                }
-                .quote {
-                    .box {
-                        padding: 40px 64px;
+            .row {
+                #animation-3-1, #animation-3-2, #animation-3-3 {
+                    position: absolute;
+                    top: 0;
+                    img {
+                        width: 100%;
+                        &:not(:first-of-type) {
+                            position: absolute;
+                            top : 0;
+                            left: 0;
+                        }
                     }
+                    &.fixed {
+                        position: fixed;
+                        top: 70px;
+                    }
+                    &.absolute {
+                        position: absolute;
+                        top: unset;
+                        bottom: 0;
+                    }
+                }
+                #placeholder-20-1 {
+                    margin-top: -165px;
+                }
+                #animation-3-1-end, #animation-3-2-end, #animation-3-3-end {
+                    height: unset;
                 }
             }
         }
