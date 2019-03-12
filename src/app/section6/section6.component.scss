@@ -6,6 +6,7 @@ section {
         background: url('/assets/heroes/section6-hero.jpg') center top no-repeat;
     }
     .main {
+        background: url('/assets/main-site/bg-template.png') center bottom no-repeat;
         .content {
             .row {
                 text {
@@ -53,6 +54,66 @@ section {
                         transition: opacity .5s;
                         &.on {
                             opacity: 1;
+                        }
+                    }
+                }
+                .helpful-links {
+                    text-align: center;
+                    .top {
+                        height: 105px;
+                        border-top-left-radius: 8px;
+                        border-top-right-radius: 8px;
+                        background: url(/assets/main-site/top-related.png) top center no-repeat;
+                        font: 28px/85px $klinicslab-bold;
+                        color: #fff;
+                    }
+                    .bottom {
+                        background-color: #fff;
+                        border-bottom-left-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        margin-bottom: 60px;
+                        padding: 30px 0;
+                        a {
+                            .img-container {
+                                height: 140px;
+                                overflow: hidden;
+                                .related {
+                                    // width: 100%;
+                                    height: 100%;
+                                    -webkit-transition: all 1s ease;
+                                    transition: all 1s ease;
+                                    background-size: cover;
+                                }
+                                #related-1 {
+                                    background: url(/assets/main-site/related-001.jpg) top center no-repeat;
+                                }
+                                #related-2 {
+                                    background: url(/assets/main-site/taking-charge-Thumb.jpg) top center no-repeat;
+                                }
+                                #related-3 {
+                                    background: url(/assets/main-site/related-001.jpg) top center no-repeat;
+                                }
+                            }
+                            &:hover .img-container > div {
+                                transform: scale(1.1);
+                            }
+                        }
+                        a.category {
+                            p {
+                                font: 12px $klinicslab-bold;
+                                color: #b5b5b5;
+                                text-align: left;
+                                margin: 10px 0;
+                                text-transform: uppercase;
+                            }
+                        }
+                        a.article {
+                            h3 {
+                                text-align: left;
+                                font-size: 18px;
+                                font-family: $lato-bold;
+                                color: #fa9300;
+                            }
                         }
                     }
                 }
