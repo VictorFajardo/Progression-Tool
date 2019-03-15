@@ -7,6 +7,7 @@ section {
     }
     .main {
         background: url('/assets/main-site/bg-template.png') center bottom no-repeat;
+        background-size: contain;
         .content {
             .row {
                 text {
@@ -37,17 +38,31 @@ section {
                         unicode-bidi: bidi-override;
                         direction: rtl;
                         margin-bottom: 1em;
-                        a:hover:before, a:hover ~ a:before {
-                                content: "";
-                                position: absolute;
-                                width: 50px;
-                                height: 50px;
-                                left: 0;
-                                background-image: url('/assets/icons/rate-star-filled.png');
+                        .star:hover:before, .star:hover ~ .star:before {
+                            content: "";
+                            position: absolute;
+                            width: 42px;
+                            height: 42px;
+                            left: 4px;
+                            top: -10px;
+                            background-image: url('/assets/icons/rate-star-filled.svg');
+                        }
+                        .off {
+                            cursor: auto;
+                        }
+                        img {
+                            width: 42px;
+                            margin: 4px;
                         }
                     }
+                    
                     p {
                         font: 24px/36px $lato-heavy;
+                    }
+                    p:last-of-type {
+                        border-bottom: 1px solid #b7b7b7;
+                        padding-bottom: 20px;
+                        margin-bottom: 50px;
                     }
                     #rating-text {
                         opacity: 0;
