@@ -21,4 +21,7 @@ export class Section4Component implements OnInit {
     this.tooltip.hide($event);
   }
 
+  focusoutTooltip($event: Event) {
+    this.tooltip.focusout($event);
+  }
 }

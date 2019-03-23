@@ -1,4 +1,4 @@
-ng build --base-href /progression-tool/ --deploy-url /progression-tool/ --prod
+ng build --base-href /understanding-ipf-progression/ --deploy-url /understanding-ipf-progression/ --prod
 
 ng g component component-name
 

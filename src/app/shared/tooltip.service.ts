@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { shallowEqual } from '@angular/router/src/utils/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +8,17 @@ export class TooltipService {
   constructor() { }
 
   show($target: any) {
+    const self = this;
     const element = $($target).is('img') ? $($target).parent() : $($target);
     const hint = $('#' + element.attr('hint-data'));
     hint.show();
     this.positioning(element, hint);
-    console.log('here');
+  }
+
+  focusout($target: any) {
+    const element = $($target).is('img') ? $($target).parent() : $($target);
+    const hint = $('#' + element.attr('hint-data'));
+    hint.hide();
   }
 
   hide($target: any) {

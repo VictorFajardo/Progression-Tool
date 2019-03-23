@@ -83,6 +83,9 @@ ul {
           }
     }
 }
+.main-nav, .main-footer {
+    overflow: hidden;
+}
 .orange {
     color: $orange;
 }

@@ -19,7 +19,10 @@ section {
         .content {
             // margin-top: initial;
             .row {
-                #animation-3-1, #animation-3-2, #animation-3-3 {
+                .copy:first-of-type {
+                    margin-bottom: 50px;
+                }
+                .animation {
                     position: absolute;
                     top: 0;
                     img {

@@ -13,9 +13,6 @@ section {
                         color: #fff;
                     }
                 }
-                .label {
-                    // margin-left: 50px;
-                }
             }
         }
     }
@@ -50,6 +47,9 @@ section {
                     &.first {
                         margin-top: 75px;
                     }
+                }
+                img {
+                    width: 100%;
                 }
             }
         }

@@ -14,7 +14,7 @@ export class Section6Component implements OnInit {
   ngOnInit() {
     const self = this;
     // tslint:disable-next-line:only-arrow-functions
-    $('.star').hover(function () {
+    $('.star').hover(function() {
       if (!self.rating) {
         // tslint:disable-next-line:radix
         const id = parseInt($(this).attr('id').substr(-1));

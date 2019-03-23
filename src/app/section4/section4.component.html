@@ -87,7 +87,7 @@
         <div class="row position-relative justify-content-center">
           <div class="text copy col-9">
             <p>Pulmonologists will track IPF’s effect on the body with certain <a [routerLink]="" hint-data="hint-2"
-                (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like HRCT
+              (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like HRCT
               scans, forced vital capacity (FVC), and walking tests.</p>
             <br />
             <p>While these tests can help provide a clearer picture of how IPF is progressing, remember that one single
@@ -97,7 +97,7 @@
             <p>Additionally, it’s important to understand that test results aren’t just numbers on a chart—they may
               help explain why you’re feeling a certain way. </p>
             <br />
-            <p>For example, <a [routerLink]="" hint-data="hint-3" (click)="showTooltip($event.target)">FVC <img src="assets/icons/plus.png"
+            <p>For example, <a [routerLink]="" hint-data="hint-3" (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">FVC <img src="assets/icons/plus.png"
                   alt=""></a> is related to your ability to be physically active. One study found that a 1% loss in FVC
               equates to <strong>60 fewer steps</strong> per day. In other words, test results could help explain or
               predict the impact of IPF on your daily life.

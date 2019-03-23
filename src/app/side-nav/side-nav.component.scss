@@ -34,6 +34,7 @@ nav {
                         font-size: 14px;
                         font-family: $lato;
                         opacity: 0;
+                        letter-spacing: -.3px;
                         transition: opacity .5s ease;
                     }
                 }
@@ -81,5 +82,12 @@ nav {
                 }
             }
         }
+    }
+}
+
+//Chrome 29+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    nav .nav-item a div p span {
+        letter-spacing: normal;
     }
 }
