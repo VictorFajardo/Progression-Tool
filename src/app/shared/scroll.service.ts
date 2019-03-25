@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 
 @Injectable({
   providedIn: 'root'
