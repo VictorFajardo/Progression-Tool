@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InterstitialService } from '../shared/interstitial.service';
 
 @Component({
   selector: 'app-section6',
@@ -9,7 +10,7 @@ export class Section6Component implements OnInit {
 
   rating = false;
 
-  constructor() { }
+  constructor(private external: InterstitialService) { }
 
   ngOnInit() {
     const self = this;
@@ -66,5 +67,9 @@ export class Section6Component implements OnInit {
           }
         }
     });
+  }
+
+  openExternal($event: Event) {
+    this.external.open($event);
   }
 }

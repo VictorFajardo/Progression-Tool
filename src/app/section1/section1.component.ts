@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TooltipService } from '../shared/tooltip.service';
+import { InterstitialService } from '../shared/interstitial.service';
 
 @Component({
   selector: 'app-section1',
@@ -8,7 +9,7 @@ import { TooltipService } from '../shared/tooltip.service';
 })
 export class Section1Component implements OnInit {
 
-  constructor(private tooltip: TooltipService) { }
+  constructor(private tooltip: TooltipService, private external: InterstitialService) { }
 
   ngOnInit() {
   }
@@ -23,5 +24,9 @@ export class Section1Component implements OnInit {
 
   focusoutTooltip($event: Event) {
     this.tooltip.focusout($event);
+  }
+
+  openExternal($event: Event) {
+    this.external.open($event);
   }
 }

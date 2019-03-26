@@ -10,6 +10,20 @@ section {
                     height: initial;
                     background-color: initial;
                 }
+                .text {
+                    h1 {
+                        background: url('/assets/elements/down-arrows.png') top right no-repeat;
+                    }
+                    .scroll {
+                        position: absolute;
+                        right: 100px;
+                        bottom: 50px;
+                        margin-bottom: 0;
+                        font: 15px/18px $lato;
+                        color: #4d4d4d;
+
+                    }
+                }
             }
         }
     }

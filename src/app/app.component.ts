@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from './shared/scroll.service';
 import { WindowService } from './shared/window.service';
+import { InterstitialService } from './shared/interstitial.service';
 
 @Component({
   selector: 'app-root',

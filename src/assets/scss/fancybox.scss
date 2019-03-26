@@ -1,0 +1,59 @@
+.fancybox-is-open .fancybox-bg {
+    opacity: .8 !important;
+}
+
+.fancybox-inner {
+  
+    .fancybox_container.fancybox-content {
+            background: #fff;
+            background: #fff -moz-linear-gradient(-60deg, #fff 0%, rgba(33, 231, 206, 0.3) 100%);
+            background: #fff -webkit-linear-gradient(-60deg, #fff 0%, rgba(33, 231, 206, 0.3) 100%);
+            background: #fff linear-gradient(120deg, #fff 0%, rgba(33, 231, 206, 0.3) 100%);
+            width: 769px;
+            padding: 16px 44px;
+        h1 {
+            color: #046c73;
+            font: 42px/36px $klinicslab-bold;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        hr {
+            border-color: #fa9300;
+            width: 40px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .buttons {
+            text-align: center;
+            a {
+                background-color: #f80;
+                border-radius: 2rem;
+                background-clip: padding-box;
+                padding: 8px 80px;
+                margin: 18px;
+                color: #fff;
+                vertical-align: middle;
+                display: inline-block;
+                text-decoration: none;
+                border: medium none;
+                cursor: pointer;
+                // white-space: nowrap;
+                font: 20px/30px $lato-heavy;
+                &.cancel {
+                    background-color: #fff;
+                    color: #fa9300;
+                    border: 1px solid #fa9300;
+                }
+                &:hover {
+                    background-color: #e85d00;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
