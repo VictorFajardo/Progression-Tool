@@ -104,6 +104,9 @@ section {
                             margin-bottom: 0;
                             span {
                                 font-size: 18px;
+                                &.small {
+                                    font-size: 12px;
+                                }
                             }
                         }
                     }

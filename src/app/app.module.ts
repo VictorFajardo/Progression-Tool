@@ -15,7 +15,6 @@ import { Section6Component } from './section6/section6.component';
 import { FooterComponent } from './footer/footer.component';
 
 import * as $ from 'jquery';
-// import '@fancyapps/fancybox';
 
 @NgModule({
   declarations: [
