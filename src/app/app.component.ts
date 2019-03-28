@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from './shared/scroll.service';
 import { WindowService } from './shared/window.service';
 import { InterstitialService } from './shared/interstitial.service';
+import { AnimationService } from './shared/animation.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
 
   title = 'progression-tool';
 
-  constructor(private scroll: ScrollService, private window: WindowService) { }
+  constructor(private scroll: ScrollService, private window: WindowService, private animation: AnimationService) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: Event) {
@@ -29,5 +30,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.window.windowSize(window.innerWidth, window.innerHeight);
+    this.animation.start_animation();
   }
 }
