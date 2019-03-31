@@ -1,18 +1,28 @@
 import { Injectable } from '@angular/core';
-// import * as $ from 'jquery';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
 
-  // cont2 = start.offset().top;
-  // timeZoom = 400; // distance in pixels
   navHeight = 70; // nav height
+  animationArray = [{
+    id: 0,
+    start: 0,
+    time: 0,
+    base: '',
+    slides: 0,
+    target: $()
+  }, {
+    id: 0,
+    start: 0,
+    time: 0,
+    base: '',
+    slides: 0,
+    target: $()
+  }];
 
-  constructor() {
-    // console.log($('#container-2').offset().top);
-   }
+  constructor() { }
 
   scrollProgress(pos: number) {
     // console.log('pos:', pos);
@@ -73,8 +83,11 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
     this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
     this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
+    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, pos);
+    this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
     this.position($('#container-3-2'), $('#animation-3-2'), pos);
+    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 36, 1800, pos);
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
@@ -121,6 +134,52 @@ export class ScrollService {
     }
   }
 
+  animate(start: any, end: any, target: any, index: number, slides: number, time: number, pos: number) {
+    // tslint:disable-next-line:max-line-length
+    if (pos >= start.offset().top - (start.attr('id') + '-end' === end.attr('id') ? window.innerHeight : this.navHeight) && pos < end.offset().top + end.outerHeight() - this.navHeight) {
+      if (!target.hasClass('animate')) {
+        target.addClass('animate');
+        console.log('animation running');
+        this.animationArray[index].start = 0;
+        this.animationArray[index].time = time;
+        this.animationArray[index].base = target.attr('data-src');
+        this.animationArray[index].slides = slides;
+        this.animationArray[index].target = target;
+        this.animation(index);
+        console.log('index slot saved', index);
+      }
+    } else {
+      if (target.hasClass('animate')) {
+        target.removeClass('animate');
+        this.cancelAnimation(this.animationArray[index].id);
+        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001.png');
+        console.log('animation stoped');
+      }
+    }
+  }
+
+  animation(index: number) {
+    if (this.animationArray[index].start === 0) {
+      this.animationArray[index].start = new Date().getTime();
+    }
+    const now = new Date().getTime();
+    // tslint:disable-next-line:max-line-length
+    const value = 1 + Math.floor(this.animationArray[index].slides * (now - this.animationArray[index].start) / this.animationArray[index].time);
+    // console.log(value);
+    if (value < this.animationArray[index].slides) {
+      // tslint:disable-next-line:max-line-length
+      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + '.png');
+    }
+    if (now - this.animationArray[index].start >= this.animationArray[index].time) {
+      this.animationArray[index].start = 0;
+    }
+    this.animationArray[index].id = requestAnimationFrame(() => this.animation(index));
+  }
+
+  cancelAnimation(id: any) {
+    cancelAnimationFrame(id);
+  }
+
   visibility(start: any, end: any, target: any, option: boolean, pos: number) {
     if (pos >= start.offset().top - this.navHeight && pos < end.offset().top - this.navHeight) {
       target.css('visibility', option ? 'visible' : 'hidden');
@@ -135,9 +194,8 @@ export class ScrollService {
 
   zoom(source: any, target: any, initial: number, final: number, pos: number) {
     if (pos >= source.offset().top - this.navHeight && pos <= source.offset().top - this.navHeight + source.outerHeight()) {
-      // console.log(initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight());
       // tslint:disable-next-line:max-line-length
-      target.css('transform', 'scale(' + ( initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()) + ')');
+      target.css('transform', 'scale(' + (initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()) + ')');
     } else {
       target.css('transform', 'scale(' + (pos < source.offset().top ? initial : final) + ')');
     }
@@ -164,10 +222,12 @@ export class ScrollService {
   menu(pos: number) {
     for (let i = 0; i <= 6; i++) {
       // tslint:disable-next-line:max-line-length
-      if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0) && pos < (i < 2 ? Math.floor($('app-section' + (i + 1) + ' nav').offset().top - 70) : $('app-footer').offset().top)) {
-        $('app-side-nav .nav-item.active').removeClass('active');
-        $('app-side-nav .section-' + i).addClass('active');
-        $('app-nav .title').html(i === 0 ? 'Understanding IPF Progression' : $('app-side-nav .section-' + i + ' span').html());
+      if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0) && pos < (i < 6 ? Math.floor($('app-section' + (i + 1) + ' nav').offset().top - 70) : $('app-footer').offset().top)) {
+        if (!$('app-side-nav .section-' + i).hasClass('active')) {
+          $('app-side-nav .nav-item.active').removeClass('active');
+          $('app-side-nav .section-' + i).addClass('active');
+          $('app-nav .title').html(i === 0 ? 'Understanding IPF Progression' : $('app-side-nav .section-' + i + ' span').html());
+        }
       }
     }
   }

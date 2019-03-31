@@ -30,6 +30,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.window.windowSize(window.innerWidth, window.innerHeight);
-    this.animation.start_animation();
   }
 }
