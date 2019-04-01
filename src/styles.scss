@@ -27,14 +27,6 @@
 @import "assets/scss/variables.scss";
 @import "assets/scss/fancybox.scss";
 
-/* Overrides */
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
-}
-
 /* Global Styles */
 body {
     padding-top: 70px; // Nav Height

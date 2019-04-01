@@ -18,9 +18,9 @@ export class NavComponent implements OnInit {
     this.grid.show();
   }
 
-  // @HostListener('window:scroll', ['$event'])
-  // doSomethingOnInternalScroll($event: Event) {
-  //   const scrollOffset = $event.srcElement.children[0].scrollTop;
-  //   console.log('scroll: ', scrollOffset);
-  // }
+  goTo(i: number) {
+    // console.log(i);
+    // tslint:disable-next-line:max-line-length
+    $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0);
+  }
 }

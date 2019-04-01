@@ -11,9 +11,6 @@ section {
                     background-color: initial;
                 }
                 .text {
-                    h1 {
-                        background: url('/assets/elements/down-arrows.png') top right no-repeat;
-                    }
                     .scroll {
                         position: absolute;
                         right: 100px;
@@ -26,5 +23,12 @@ section {
                 }
             }
         }
+    }
+}
+
+//Desktop
+@media (min-width: 1025px) { 
+    section nav .content .title .text h1 {
+        background: url('/assets/elements/down-arrows.png') top right no-repeat;
     }
 }

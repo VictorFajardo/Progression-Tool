@@ -11,13 +11,17 @@
       </a>
     </div>
     <div class="container content">
-      <h1 class="title">Understanding IPF Progression</h1>
+      <h1 id="title" class="d-none d-lg-block">Understanding IPF Progression</h1>
+      <select name="title" id="mobile-menu" class="d-lg-none" (change)="goTo($event.target.selectedIndex)">
+        <option value="0">Understanding IPF Progression</option>
+        <option value="1">What is IPF Progression?</option>
+        <option value="2">The Lungs’ Healing Process</option>
+        <option value="3">Scarring Progresses</option>
+        <option value="4">How Disease Progression Affects the Body</option>
+        <option value="5">Risk of Acute Exacerbations</option>
+        <option value="6">Slowing Progression</option>
+      </select>
     </div>
     <div class="addthis_inline_share_toolbox"></div>
   </div>
 </nav>
-
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                
-            
-<!-- <div class="line"></div> -->

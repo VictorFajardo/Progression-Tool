@@ -1,18 +1,27 @@
-:host {
-}
+@import "src/assets/scss/section.scss";
+
 nav {
     position: fixed;
     top: 0;
     background-color: #fff; // Dev
     z-index: 1000;
     border-bottom: 1px solid #000;
-    h1 {
+    height: 70px;
+    h1, select {
         font-size: 24px;
         color: rgb(60, 60, 60);
         line-height: 70px;
         text-align: center;
     }
-    
+    select {
+        font-family: $lora;
+        border: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
     #logo {
         position: absolute;
         top: 0;
