@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  navHeight = 70; // nav height
+  navHeight: 70;
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class SideNavComponent implements OnInit {
 
   goTo(i: number) {
     // tslint:disable-next-line:max-line-length
-    $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0);
+    $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - this.navHeight) : 0);
   }
 
 }

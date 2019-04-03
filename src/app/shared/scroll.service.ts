@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import * as global from './global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
 
-  navHeight = 70; // nav height
+  navHeight: number;
   animationArray = [{
     id: 0,
     start: 0,
@@ -26,7 +27,6 @@ export class ScrollService {
 
   scrollProgress(pos: number) {
     // console.log('pos:', pos);
-
     // Menu Items
     this.menu(pos);
 
@@ -231,5 +231,9 @@ export class ScrollService {
         }
       }
     }
+  }
+
+  resize(width: number) {
+    this.navHeight = width < 768 ? 42 : 70;
   }
 }

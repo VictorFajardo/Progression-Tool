@@ -51,13 +51,13 @@ section {
                 }
                 .block-text {
                     .big {
-                        font: 24px/42px $lora;
+                        font: $normal-font-size/42px $lora;
                     }
                 }
                 .quote {
                     margin: 34px 0 80px;
                     .box {
-                        padding: 36px 50px;
+                        padding: $normal-line-height 50px;
                     }
                 }
             }
@@ -73,6 +73,20 @@ section {
                 a {
                     width: 59.7%;
                     margin: 28px 0 48px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024.98px) {
+    section {
+        footer {
+            .content {
+                .callout {
+                    a {
+                        width: 80%;
+                    }
                 }
             }
         }

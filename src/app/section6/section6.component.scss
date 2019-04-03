@@ -25,7 +25,7 @@ section {
                 .quote {
                     margin: 80px 0;
                     .box {
-                        padding: 36px 40px;
+                        padding: $normal-line-height 40px;
                         p:first-of-type {
                             text-align: left;
                         }
@@ -66,7 +66,7 @@ section {
                     }
                     
                     p {
-                        font: 24px/36px $lato-heavy;
+                        font: $normal-font-size/$normal-line-height $lato-heavy;
                     }
                     p:last-of-type {
                         border-bottom: 1px solid #b7b7b7;

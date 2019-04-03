@@ -98,7 +98,7 @@ section {
                         margin-right: 8px;
                         margin-bottom: 6px;
                         p {
-                            font: 24px/1.75 $lora;
+                            font: $normal-font-size/1.75 $lora;
                             color: $green2;
                             text-align: center;
                             margin-bottom: 0;
@@ -174,7 +174,7 @@ section {
                 padding: 0 25px;
                 h3 {
                     display: inline-block;
-                    font-size: 24px;
+                    font-size: $normal-font-size;
                     color: #fff;
                     line-height: 1.25;
                     margin: 0;
@@ -193,18 +193,99 @@ section {
     }
 }
 
-@media only screen and (max-width: 991.98px) {
-    // section{
-    //     .main {
-    //         .content {
-    //             .row {
-    //                 .animation {
-                        .slide-base {
-                            width: 720px !important;
+@media only screen and (max-width: 1024.98px) {
+    .slide-base {
+        width: 720px;
+    }
+    section {
+        nav {
+            .content {
+                .title {
+                    .label {
+                        margin-left: 30px;
+                    }
+                    .text {
+                        padding: 39px 30px 37px;
+                    }
+                }
+            }
+        }
+        .main {
+            .content {
+                .row {
+                    .square {
+                        flex: 0 0 33.333333%;
+                        max-width: 33.333333%;
+                        padding: 0 10px;
+                        img {
+                            width: 100%;
                         }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+                        &.left {
+                            padding-left: 15px;
+                            margin-left: 0;
+                        }
+                        &.right {
+                            padding-right: 15px;
+                            margin-right: 0;
+                        }
+                    }
+                    .copy, .text, .video {
+                        padding-right: 40px;
+                        padding-left: 40px;
+                    }
+                    .block-text {
+                        flex: 0 0 calc(83.333333% - 30px);
+                        max-width: calc(83.333333% - 30px);
+                    }
+                    &.squares {
+                        padding: 46px 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    section {
+        nav {
+            .content {
+                .title {
+                    .label {
+                        margin-left: 0;
+                    }
+                    .text {
+                        padding: 20px 0;
+                        h1 {
+                            font-size: 8.3vw;;
+                            line-height: 10.4vw;    
+                        }
+                    }
+                }
+            }
+        }
+        .main {
+            .content {
+                .row {
+                    .text {
+                        font-size: $mobile-font-size;
+                        line-height: 7.65vw;
+                    }
+                    .copy, .video  {
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+                    .square {
+                        padding: 0 7.5px;
+                    }
+                    &.squares {
+                        padding: 30px 0;
+                    }
+                    .last {
+                        padding-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
 }

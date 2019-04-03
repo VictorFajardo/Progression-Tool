@@ -8,7 +8,7 @@ nav {
     border-bottom: 1px solid #000;
     height: 70px;
     h1, select {
-        font-size: 24px;
+        font-size: $normal-font-size;
         color: rgb(60, 60, 60);
         line-height: 70px;
         text-align: center;
@@ -56,4 +56,13 @@ nav {
     width: 100%;
     border-bottom: 1px dotted #000;
     z-index: 1000;;
+}
+
+@media only screen and (max-width: 767.98px) {
+    nav {
+        height: 42px;
+        h1, select {
+            font-size: $mobile-font-size;
+        }
+    }
 }

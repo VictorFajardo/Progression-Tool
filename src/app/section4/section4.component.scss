@@ -17,7 +17,7 @@ section {
                 .quote {
                     margin: 34px 0 70px;
                     .box {
-                        padding: 36px 40px;
+                        padding: $normal-line-height 40px;
                     }
                 }
                 .ladder {
@@ -26,7 +26,7 @@ section {
                     .ladder-steps {
                         top: 0;
                         position: absolute;
-                        padding-top: 36px;
+                        padding-top: $normal-line-height;
                     }
                 }
                 &.squares {

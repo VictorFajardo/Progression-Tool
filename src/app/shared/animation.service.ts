@@ -12,18 +12,19 @@ export class AnimationService {
   id: any;
   image: any;
 
-  navHeight = 70;
+  navHeight: number;
 
   constructor() { }
 
   resize(width: number, height: number) {
     const self = this;
-    if (this.base > height - 70) {
+    this.navHeight = width < 768 ? 42 : 70;
+    if (this.base > height - this.navHeight) {
       // tslint:disable-next-line:only-arrow-functions
       $('.slide-base').each(function() {
-          $(this).width(height - 70);
+          $(this).width(height - self.navHeight);
       });
-      console.log('resizing animations', height - 70);
+      console.log('resizing base animation to: ', height - this.navHeight);
     } else {
       $('.slide-base').each(function() {
         $(this).css('width', '');

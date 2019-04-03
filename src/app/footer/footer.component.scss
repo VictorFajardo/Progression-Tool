@@ -48,3 +48,16 @@ footer {
         max-width: 1200px;
     }
 }
+
+
+@media only screen and (max-width: 1024.98px) {
+    footer {
+        .right {
+            a {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
