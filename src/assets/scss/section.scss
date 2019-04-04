@@ -274,10 +274,17 @@ section {
                     position: relative;
                     bottom: 0;
                     .id {
-                        margin-top: -40px;
+                        margin-top: -6.94vw;
                     }
                     .label {
                         margin-left: 0;
+                        width: 17.36vw;
+                        height: 6.94vw;
+                        p {
+                            font-size: $mobile-font-size;
+                            width: 8.68vw;
+                            line-height: 6.94vw;
+                        }
                     }
                     .text {
                         padding: 20px 0;
@@ -290,20 +297,15 @@ section {
             }
         }
         .main {
-            &:first-of-type {
+            // &:first-of-type {
                 background-color: #fff;
-            }
+            // }
             .content {
                 margin-top: 0;
                 .row {
-                    > div:first-of-type {
-                        // margin-top: 0;
-                    }
                     .text {
                         font-size: $mobile-font-size;
                         line-height: 7.65vw;
-                        // margin-top: 35px;
-                        // margin-bottom: 35px;
                     }
                     .block-text {
                         flex: 0 0 calc(100% - 12.5vw);
@@ -317,6 +319,19 @@ section {
                     .copy, .video  {
                         padding-right: $mobile-padding;
                         padding-left: $mobile-padding;
+                    }
+                    .quote {
+                        .box {
+                            p {
+                                font-size: $mobile-font-size;
+                                span {
+                                    font-size: 3.125vw;
+                                    &.small {
+                                        font-size: 2vw;
+                                    }
+                                }
+                            }
+                        }
                     }
                     .full-block-mobile {
                         flex: 0 0 100%;

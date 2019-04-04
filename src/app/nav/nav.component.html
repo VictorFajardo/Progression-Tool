@@ -5,14 +5,25 @@
         <img src="assets/icons/lungs-and-you.svg" alt="Lungs and You Logo">
       </a>
     </div>
-    <div id="social-media">
-      <a href="">
-        <img src="assets/icons/social-icons.png" alt="">
-      </a>
+    <div id="title">
+        <h1 ><span class="d-none d-lg-block">Understanding IPF Progression</span></h1>
     </div>
-    <div class="container content">
-      <h1 id="title" class="d-none d-lg-block">Understanding IPF Progression</h1>
-      <select name="title" id="mobile-menu" class="d-lg-none" (change)="goTo($event.target.selectedIndex)">
+    <div id="social-media">
+      <div id="facebook">
+        <a [routerLink]="" (click)="share('facebook')">
+          <img src="assets/icons/facebook-grey-icon.svg" alt="" width="42" height="42">
+        </a>
+      </div>
+      <div id="twitter">
+        <a [routerLink]="" (click)="share('twitter')">
+          <img src="assets/icons/twitter-grey-icon.svg" alt="" width="42" height="42">
+        </a>
+      </div>
+    </div>
+    
+    <!-- <div class="container content"> -->
+      
+      <!-- <select name="title" id="mobile-menu" class="d-lg-none" (change)="goTo($event.target.selectedIndex)">
         <option value="0">Understanding IPF Progression</option>
         <option value="1">What is IPF Progression?</option>
         <option value="2">The Lungs’ Healing Process</option>
@@ -20,7 +31,7 @@
         <option value="4">How Disease Progression Affects the Body</option>
         <option value="5">Risk of Acute Exacerbations</option>
         <option value="6">Slowing Progression</option>
-      </select>
-    </div>
+      </select> -->
+    <!-- </div> -->
   </div>
 </nav>

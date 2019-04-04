@@ -73,6 +73,7 @@ ul {
             display: inline-block; 
             width: 1em;
             margin-left: -1em;
+            vertical-align: top;
           }
     }
 }
@@ -115,4 +116,11 @@ ul {
         margin-right: -$mobile-margin;
         margin-left: -$mobile-margin;
     }
+    ul li p {
+        margin-left: 0;
+    }
+}
+
+.addthis_inline_share_toolbox {
+    display: none;
 }

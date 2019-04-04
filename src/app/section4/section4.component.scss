@@ -14,6 +14,9 @@ section {
                 .square:nth-child(2) {
                     margin-bottom: 50px;
                 }
+                .square:nth-child(n+4) {
+                    z-index: -1;
+                }
                 .quote {
                     margin: 34px 0 70px;
                     .box {
@@ -36,6 +39,86 @@ section {
                         transform: translateY(-50%);
                         p {
                             font: 24px/42px $lora;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Tablet
+@media only screen and (max-width: 1024.98px) {
+    section {
+        .main {
+            .content {
+                .row {
+                    &.squares {
+                        .text {
+                            position: relative;
+                            margin: 0;
+                            -webkit-transform: translateY(0);
+                            transform: translateY(0);
+                        }
+                        .square:nth-child(n+4) {
+                            z-index: inherit;
+                            margin-top: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Mobile
+@media only screen and (max-width: 767.98px) {
+    ul {
+        margin-bottom: 0;
+    }
+    section {
+        .main {
+            .content {
+                .row {
+                    .quote {
+                        margin: 30px 0 40px;
+                        .box {
+                            padding: 16px 20px;
+                        }
+                    }
+                    .ladder {
+                        margin: 30px 0;
+                        padding-right: 0;
+                        padding-left: 0;
+                        img {
+                            width: 100%;
+                        }
+                        #ladder-step1, #ladder-step3 {
+                            img {
+                                padding: 1.55vw 8vw 1.55vw 0;
+                            }
+                        }
+                        #ladder-step2, #ladder-step4 {
+                            img {
+                                padding: 1.55vw 0 1.55vw 8vw;
+                            }
+                        }
+                    }
+                    &.squares {
+                        .text {
+                            flex: 0 0 calc(100% + 8.5vw);
+                            max-width: calc(100% + 8.5vw);
+                            padding: 20px 6.5vw;
+                            p {
+                                font-size: 4.34vw;
+                                line-height: inherit;
+                            }
+                        }
+                        .square:nth-child(2) {
+                            margin-bottom: 30px;
+                        }
+                        .square:nth-child(n+4) {
+                            margin-top: 30px;
                         }
                     }
                 }

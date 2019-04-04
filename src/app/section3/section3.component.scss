@@ -121,6 +121,9 @@ section {
                 .row {
                     .quote {
                         margin: 40px 0 60px;
+                        .box {
+                            padding: 16px 20px;
+                        }
                     }
                     .copy:first-of-type {
                         margin-bottom: 25px;
@@ -132,6 +135,29 @@ section {
                         &.absolute {
                             top: initial;
                         }
+                    }
+                }
+            }
+        }
+        footer {
+            .content {
+                .callout {
+                    padding-right: $mobile-padding;
+                    padding-left: $mobile-padding;
+                    text-align: center;
+                    h3 {
+                        width: 100%;
+                        margin-top: 20px;
+                        text-align: left;
+                        font-size: $mobile-font-size;
+                        line-height: $mobile-line-height;
+                    }
+                    a {
+                        width: auto;
+                        padding: 0 20px;
+                        margin: 20px 0;
+                        font-size: 3.47vw;
+                        line-height: 8.68vw;
                     }
                 }
             }

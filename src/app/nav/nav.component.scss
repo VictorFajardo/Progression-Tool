@@ -7,20 +7,16 @@ nav {
     z-index: 1000;
     border-bottom: 1px solid #000;
     height: 70px;
-    h1, select {
-        font-size: $normal-font-size;
-        color: rgb(60, 60, 60);
-        line-height: 70px;
-        text-align: center;
-    }
-    select {
-        font-family: $lora;
-        border: 0;
+    #title {
         position: absolute;
-        top: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
         left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
+        h1 {
+            font-size: $normal-font-size;
+            color: rgb(60, 60, 60);
+            line-height: 70px;
+        }
     }
     #logo {
         position: absolute;
@@ -40,12 +36,10 @@ nav {
         top: 0;
         right: 0;
         height: 70px;
-        width: 120px;
-        padding: 14px 13px;
-        a {
-            img {
-                width: 94px;
-            }
+        padding-right: 8px;
+        #facebook, #twitter {
+            display: inline-block;
+            padding: 14px 5px;
         }
     }
 }
@@ -58,6 +52,18 @@ nav {
     z-index: 1000;;
 }
 
+//Tablet
+@media only screen and (max-width: 1024.98px) {
+    nav {
+        #title {
+            h1 {
+            }    
+        }
+        
+    }
+}
+
+//Mobile
 @media only screen and (max-width: 767.98px) {
     nav {
         height: 42px;

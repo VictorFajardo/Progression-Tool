@@ -226,7 +226,8 @@ export class ScrollService {
         if (!$('app-side-nav .section-' + i).hasClass('active')) {
           $('app-side-nav .nav-item.active').removeClass('active');
           $('app-side-nav .section-' + i).addClass('active');
-          $('app-nav #title').html(i === 0 ? 'Understanding IPF Progression' : $('app-side-nav .section-' + i + ' span').html());
+          // tslint:disable-next-line:max-line-length
+          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html());
           $('app-nav #mobile-menu').val(i);
         }
       }

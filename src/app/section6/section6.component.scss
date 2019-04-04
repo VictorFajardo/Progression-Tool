@@ -87,9 +87,10 @@ section {
                         height: 105px;
                         border-top-left-radius: 8px;
                         border-top-right-radius: 8px;
-                        background: url(/assets/main-site/top-related.png) top center no-repeat;
+                        background: url(/assets/main-site/top-related.png) center center no-repeat;
                         font: 28px/85px $klinicslab-bold;
                         color: #fff;
+                        background-size: auto 104px;
                     }
                     .bottom {
                         background-color: #fff;
@@ -102,19 +103,21 @@ section {
                                 height: 140px;
                                 overflow: hidden;
                                 #related-1 {
-                                    background: url(/assets/main-site/related-001.jpg) top center no-repeat;
+                                    background-image: url(/assets/main-site/related-001.jpg);
                                 }
                                 #related-2 {
-                                    background: url(/assets/main-site/taking-charge-Thumb.jpg) top center no-repeat;
+                                    background-image: url(/assets/main-site/taking-charge-Thumb.jpg);
                                 }
                                 #related-3 {
-                                    background: url(/assets/main-site/sign-up-Thumb.jpg) top center no-repeat;
+                                    background-image: url(/assets/main-site/sign-up-Thumb.jpg);
                                 }
                                 .related {
                                     height: 100%;
                                     -webkit-transition: all 1s ease;
                                     transition: all 1s ease;
-                                    background-size: contain !important;
+                                    background-position: top center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
                                 }
                             }
                             &:hover .img-container > div {
@@ -138,6 +141,49 @@ section {
                                 color: #fa9300;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Tablet
+@media only screen and (max-width: 1024.98px) {
+    section {
+        .main {
+            .content {
+                .row {
+                    .helpful-links {
+                        .bottom {
+                            a {
+                                .img-container {
+                                    // height: 160px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Mobile
+@media only screen and (max-width: 767.98px) {
+    section {
+        .main {
+            .content {
+                .row{
+                    .quote {
+                        margin: 30px 0;
+                        .box {
+                            padding: 16px 20px;
+                        }
+                    }
+                    .cta {
+                        font-size: 3.47vw;
+                        line-height: 8.68vw;
                     }
                 }
             }

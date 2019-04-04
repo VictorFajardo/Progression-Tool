@@ -58,3 +58,32 @@ section {
         }
     }
 }
+
+@media only screen and (max-width: 767.98px) {
+    section {
+        nav {
+            .content {
+                background-color: #666;
+            }
+        }
+        .main {
+            background-color: #666;
+            .content {
+                .row {
+                    .copy {
+                        .big {
+                            font-size: $mobile-font-size;
+                            line-height: 7.363vw;
+                        }
+                    }
+                    .video {
+                        margin-bottom: 30px;
+                        &.first {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

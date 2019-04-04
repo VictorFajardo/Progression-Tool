@@ -23,4 +23,9 @@ export class NavComponent implements OnInit {
     $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - $('nav.main-nav').height()) : 0);
   }
 
+  share(service: string) {
+    console.log('sharing');
+    $('.at-svc-' + service)[0].click();
+  }
+
 }
