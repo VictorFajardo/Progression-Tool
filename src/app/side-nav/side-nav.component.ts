@@ -16,7 +16,7 @@ export class SideNavComponent implements OnInit {
 
   goTo(i: number) {
     // tslint:disable-next-line:max-line-length
-    $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - this.navHeight) : 0);
+    $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - $('nav.main-nav').height()) : 0);
   }
 
 }

@@ -57,8 +57,12 @@ section {
 @media only screen and (max-width: 767.98px) {
     section {
         nav {
+            padding-top: 35px;
             .content {
                 .title {
+                    .id {
+                        margin-top: 0;
+                    }
                     .label {
                         margin-left: 0;
                     }
@@ -68,6 +72,9 @@ section {
         .main {
             .content {
                 .row {
+                    > div:first-of-type {
+                        // margin-bottom: 25px;
+                    }
                 }
             }
         }
@@ -96,4 +103,3 @@ section {
         }
     }
 }
-// section[_ngcontent-c4] footer[_ngcontent-c4] .content[_ngcontent-c4] .callout[_ngcontent-c4] h3[_ngcontent-c4]

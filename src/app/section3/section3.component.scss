@@ -17,7 +17,6 @@ section {
         background: url('/assets/heroes/section3-footer.jpg') center bottom no-repeat;
         background-size: 100%;
         .content {
-            // margin-top: initial;
             .row {
                 .copy:first-of-type {
                     margin-bottom: 50px;
@@ -39,7 +38,7 @@ section {
                     }
                     &.absolute {
                         position: absolute;
-                        top: unset;
+                        top: initial;
                         bottom: 0;
                     }
                 }
@@ -47,7 +46,7 @@ section {
                     margin-top: -165px;
                 }
                 #animation-3-1-end, #animation-3-2-end, #animation-3-3-end {
-                    height: unset;
+                    height: initial;
                 }
                 .block-text {
                     .big {
@@ -81,11 +80,58 @@ section {
 
 @media only screen and (max-width: 1024.98px) {
     section {
+        padding-top: 35px;
+        nav {
+            .content {
+                .title {
+                    .text {
+                        padding: 39px 30px 37px;
+                    }
+                }
+            }
+        }
         footer {
             .content {
                 .callout {
                     a {
                         width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    section {
+        nav {
+            .content {
+                .title {
+                    .text {
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+        .main {
+            background: url('/assets/heroes/section3-mobile-footer.jpg') center bottom no-repeat;
+            background-size: 100%;
+            padding-bottom: 0;
+            .content {
+                .row {
+                    .quote {
+                        margin: 40px 0 60px;
+                    }
+                    .copy:first-of-type {
+                        margin-bottom: 25px;
+                    }
+                    .animation {
+                        &.fixed {
+                            top: 42px;
+                        }
+                        &.absolute {
+                            top: initial;
+                        }
                     }
                 }
             }

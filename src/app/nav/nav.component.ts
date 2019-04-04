@@ -8,8 +8,6 @@ import { GridService } from '../shared/grid.service';
 })
 export class NavComponent implements OnInit {
 
-  // navHeight: 70;
-
   constructor(private grid: GridService) { }
 
   ngOnInit() {
@@ -21,13 +19,8 @@ export class NavComponent implements OnInit {
   }
 
   goTo(i: number) {
-    // console.log(this.navHeight);
-    // this.navHeight = $(window).width < 768 ? 42 : 70;
     // tslint:disable-next-line:max-line-length
     $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - $('nav.main-nav').height()) : 0);
   }
 
-  // resize(width: number) {
-  //   // this.navHeight = width < 768 ? 42 : 70;
-  // }
 }

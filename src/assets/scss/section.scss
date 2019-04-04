@@ -98,7 +98,9 @@ section {
                         margin-right: 8px;
                         margin-bottom: 6px;
                         p {
-                            font: $normal-font-size/1.75 $lora;
+                            font-size: $normal-font-size;
+                            line-height: 1.75;
+                            font-family: $lora;
                             color: $green2;
                             text-align: center;
                             margin-bottom: 0;
@@ -193,16 +195,15 @@ section {
     }
 }
 
+
+//Tablet
 @media only screen and (max-width: 1024.98px) {
-    .slide-base {
-        width: 720px;
-    }
     section {
         nav {
             .content {
                 .title {
                     .label {
-                        margin-left: 30px;
+                        margin-left: 0;
                     }
                     .text {
                         padding: 39px 30px 37px;
@@ -213,32 +214,39 @@ section {
         .main {
             .content {
                 .row {
+                    .animation {
+                        .slide-base {
+                            width: 720px;
+                        }
+                    }
+                    .slide-base {
+                        width: 720px;
+                    }
                     .square {
                         flex: 0 0 33.333333%;
                         max-width: 33.333333%;
-                        padding: 0 10px;
+                        padding: 0 7.5px;
                         img {
                             width: 100%;
                         }
                         &.left {
-                            padding-left: 15px;
+                            padding-left: 7.5px;
                             margin-left: 0;
                         }
                         &.right {
-                            padding-right: 15px;
-                            margin-right: 0;
-                        }
+                            padding-right: 7.5px;
+                            margin-right: 0;                        }
                     }
                     .copy, .text, .video {
-                        padding-right: 40px;
-                        padding-left: 40px;
+                        padding-right: 45px;
+                        padding-left: 45px;
                     }
                     .block-text {
                         flex: 0 0 calc(83.333333% - 30px);
                         max-width: calc(83.333333% - 30px);
                     }
                     &.squares {
-                        padding: 46px 30px;
+                        padding: 46px 36.5px;
                     }
                 }
             }
@@ -246,11 +254,28 @@ section {
     }
 }
 
+//Mobile
 @media only screen and (max-width: 767.98px) {
     section {
+        background-color: #fff;
         nav {
+            background: none !important;
+            background-color: #fff;
+            // padding-top: 35px;
+            .mobile-hero, .mobile-hero-base {
+                img {
+                    width: 100%;
+                }
+            }
             .content {
+                background-color: #fff;
+                height: auto;
                 .title {
+                    position: relative;
+                    bottom: 0;
+                    .id {
+                        margin-top: -40px;
+                    }
                     .label {
                         margin-left: 0;
                     }
@@ -265,25 +290,59 @@ section {
             }
         }
         .main {
+            &:first-of-type {
+                background-color: #fff;
+            }
             .content {
+                margin-top: 0;
                 .row {
+                    > div:first-of-type {
+                        // margin-top: 0;
+                    }
                     .text {
                         font-size: $mobile-font-size;
                         line-height: 7.65vw;
+                        // margin-top: 35px;
+                        // margin-bottom: 35px;
+                    }
+                    .block-text {
+                        flex: 0 0 calc(100% - 12.5vw);
+                        max-width: calc(100% - 12.5vw);
+                        padding: 20px;
+                        margin: 30px 0;
+                    }
+                    .emphasis {
+                        padding: 30px $mobile-padding;
                     }
                     .copy, .video  {
-                        padding-right: 15px;
-                        padding-left: 15px;
+                        padding-right: $mobile-padding;
+                        padding-left: $mobile-padding;
+                    }
+                    .full-block-mobile {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding: $mobile-padding;
+                    }
+                    .emphasis {
+                        margin: 30px 0;
                     }
                     .square {
                         padding: 0 7.5px;
                     }
                     &.squares {
-                        padding: 30px 0;
+                        padding: 25px calc(6.25vw - 7.5px);
                     }
                     .last {
                         padding-bottom: 25px;
                     }
+                }
+            }
+        }
+        footer {
+            .content {
+                .callout {
+                    // padding-right: $mobile-padding;
+                    // padding-left: $mobile-padding;
                 }
             }
         }
