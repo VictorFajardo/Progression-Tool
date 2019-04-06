@@ -15,6 +15,7 @@ import { Section6Component } from './section6/section6.component';
 import { FooterComponent } from './footer/footer.component';
 
 import * as $ from 'jquery';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import * as $ from 'jquery';
     Section3Component,
     Section4Component,
     Section5Component,
-    Section6Component
+    Section6Component,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

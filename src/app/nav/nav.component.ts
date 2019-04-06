@@ -11,7 +11,10 @@ export class NavComponent implements OnInit {
   constructor(private grid: GridService) { }
 
   ngOnInit() {
-    this.grid.show();
+    // this.grid.show();
+    $('#facebook img').attr('src', 'assets/icons/facebook-white-icon.svg');
+    $('#twitter img').attr('src', 'assets/icons/twitter-white-icon.svg');
+    // $('#logo-container').css('background-image', 'url("assets/icons/lungs-and-you-white.svg")');
   }
 
   showGrid() {
@@ -26,6 +29,10 @@ export class NavComponent implements OnInit {
   share(service: string) {
     console.log('sharing');
     $('.at-svc-' + service)[0].click();
+  }
+
+  showMenu() {
+    $('app-mobile-menu ul').toggle('slow');
   }
 
 }

@@ -29,6 +29,7 @@ export class ScrollService {
     // console.log('pos:', pos);
     // Menu Items
     this.menu(pos);
+    this.active($('app-section0 nav .title'), $('app-nav nav'), pos);
 
     /* Section 1 */
     // Sub Animations
@@ -227,14 +228,31 @@ export class ScrollService {
           $('app-side-nav .nav-item.active').removeClass('active');
           $('app-side-nav .section-' + i).addClass('active');
           // tslint:disable-next-line:max-line-length
-          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html());
+          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html() + '<span class="d-lg-none">&#9660;</span>');
           $('app-nav #mobile-menu').val(i);
+          if (i !== 0) {
+            $('app-nav #logo a, app-nav #social-media a').addClass('active');
+          } else {
+            $('app-nav #logo a, app-nav #social-media a').removeClass('active');
+          }
         }
       }
     }
   }
 
+  active(start: any, target: any, pos: number) {
+    if (pos >= start.offset().top - this.navHeight && this.navHeight === 47) {
+      if (!target.hasClass('active')) {
+        target.addClass('active');
+        }
+    } else {
+      if (target.hasClass('active')) {
+        target.removeClass('active');
+      }
+    }
+  }
+
   resize(width: number) {
-    this.navHeight = width < 768 ? 42 : 70;
+    this.navHeight = width < 768 ? 47 : 70;
   }
 }

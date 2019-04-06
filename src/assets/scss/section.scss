@@ -124,9 +124,9 @@ section {
                     padding: 0 55px;
                     .arrow {
                         position: absolute;
-                        height: 16px;
+                        height: 18px;
                         width: 32px;
-                        top: -16px;
+                        top: -14px;
                         left: 0px;
                         background: url('/assets/icons/tooltip-arrow.png') center top no-repeat;
                         z-index: 1;
@@ -319,6 +319,10 @@ section {
                     .copy, .video  {
                         padding-right: $mobile-padding;
                         padding-left: $mobile-padding;
+                    }
+                    .hint {
+                        padding-right: calc(6.25vw + 7.5px + 2px);
+                        padding-left: calc(6.25vw + 7.5px);
                     }
                     .quote {
                         .box {
