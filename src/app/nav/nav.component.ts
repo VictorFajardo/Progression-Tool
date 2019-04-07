@@ -12,8 +12,8 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     // this.grid.show();
-    $('#facebook img').attr('src', 'assets/icons/facebook-white-icon.svg');
-    $('#twitter img').attr('src', 'assets/icons/twitter-white-icon.svg');
+    // $('#facebook img').attr('src', 'assets/icons/facebook-white-icon.svg');
+    // $('#twitter img').attr('src', 'assets/icons/twitter-white-icon.svg');
     // $('#logo-container').css('background-image', 'url("assets/icons/lungs-and-you-white.svg")');
   }
 

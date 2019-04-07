@@ -185,6 +185,64 @@ section {
                         font-size: 3.47vw;
                         line-height: 8.68vw;
                     }
+                    .share {
+                        text-align: center;
+                        #social-media {
+                            border-top: 1px solid #b7b7b7;
+                            padding-top: 20px;
+                            margin-top: 20px;
+                            #facebook, #twitter {
+                                display: inline-block;
+                                padding: 5px 5px;
+                                a {
+                                    div {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+                                }
+                            }
+                            #facebook {
+                                a {
+                                    #facebook-icon-container {                    
+                                        background-image: url('/assets/icons/facebook-grey-icon.svg');
+                                        background-size: cover;
+                                    }
+                                }
+                            }
+                            #twitter {
+                                a {
+                                    #twitter-icon-container {                    
+                                        background-image: url('/assets/icons/twitter-grey-icon.svg');
+                                        background-size: cover;
+                                    }
+                                }
+                            }              
+                        }
+                        p {                            
+                            font-size: 5.9vw;
+                            line-height: 6.9vw;
+                            border-bottom: 1px solid #b7b7b7;
+                            padding-bottom: 20px;
+                            margin-bottom: 40px;
+                        }
+                    }
+                    .rating {
+                        p {                            
+                            font-size: 5.9vw;
+                            line-height: 6.9vw;
+                        }
+                        .stars {
+                            img {
+                                width: 7.6vw;
+                            }
+                        }
+                        #rating-text {
+                            display: none;
+                            &.on {
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
         }

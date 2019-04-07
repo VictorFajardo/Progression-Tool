@@ -1,5 +1,19 @@
 @import "src/assets/scss/section.scss";
 
+:host ::ng-deep {
+    .down-arrow { 
+        font-size: 18px;
+        padding-left: 6px;
+        color: #666;
+    }
+    @media only screen and (max-width: 767.98px) {
+        .down-arrow { 
+            font-size: 3.125vw;
+        }
+    }
+
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -16,6 +30,9 @@ nav {
             font-size: $normal-font-size;
             color: rgb(60, 60, 60);
             line-height: 70px;
+            span {
+
+            }
         }
     }
     #logo {
@@ -107,17 +124,7 @@ nav {
             position: relative;
             -webkit-transform: translateX(0);
             transform: translateX(0);
-            left: 0;
-            h1 span {
-                display: none;
-            }
-            h1 {
-                span {
-                    color: aquamarine;
-                    font-size: 18px;
-                    padding-left: 6px;
-                }
-            }
+            left: initial;
             a {
                 position: absolute;
                 top: 0;
@@ -171,9 +178,13 @@ nav {
             }
         }
         #title {
+            width: calc(100% - 147px);
             h1 {
+                transform: translateY(-50%);
+                top: 50%;
+                position: absolute;
                 font-size: 4.2vw;
-                line-height: 47px;
+                line-height: normal;
             }
         }
         #logo {

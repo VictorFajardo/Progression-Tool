@@ -72,4 +72,9 @@ export class Section6Component implements OnInit {
   openExternal($event: Event) {
     this.external.open($event);
   }
+
+  share(service: string) {
+    console.log('sharing');
+    $('.at-svc-' + service)[0].click();
+  }
 }

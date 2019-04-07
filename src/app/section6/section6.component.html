@@ -48,6 +48,21 @@
           </div>
         </div>
         <div class="row justify-content-center">
+          <div class="share col-12 d-md-none">
+            <div id="social-media">
+              <div id="facebook">
+                <a [routerLink]="" (click)="share('facebook')">
+                  <div id="facebook-icon-container"></div>
+                </a>
+              </div>
+              <div id="twitter">
+                <a [routerLink]="" (click)="share('twitter')">
+                  <div id="twitter-icon-container"></div>
+                </a>
+              </div>
+            </div>
+            <p><strong>Share with Friends and Family</strong></p>
+          </div>
           <div class="rating col-lg-10">
             <p><strong id="rating-title">Was this information helpful? Please rate it.</strong></p>
             <div class="stars">
@@ -66,7 +81,7 @@
              --><div class="bottom">
               <div class="container">
               <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-4">
                   <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">
                     <div class="img-container">
                       <div class="related" id="related-1"></div>
@@ -79,7 +94,7 @@
                     <h3>Learn About a Prescription Treatment Option</h3>
                   </a>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-4">
                   <a href="/lifestyle/treatment-strategies">
                     <div class="img-container">
                       <div class="related" id="related-2"></div>
@@ -92,7 +107,7 @@
                     <h3>Taking Charge of Your Diagnosis and Treatment </h3>
                   </a>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-4">
                   <a href="/sign-up">
                     <div class="img-container">
                       <div class="related" id="related-3"></div>

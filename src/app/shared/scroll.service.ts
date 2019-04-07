@@ -13,6 +13,7 @@ export class ScrollService {
     time: 0,
     base: '',
     slides: 0,
+    mobile: false,
     target: $()
   }, {
     id: 0,
@@ -20,6 +21,7 @@ export class ScrollService {
     time: 0,
     base: '',
     slides: 0,
+    mobile: false,
     target: $()
   }];
 
@@ -84,11 +86,11 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
     this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
     this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
-    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, pos);
+    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, pos);
     this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
     this.position($('#container-3-2'), $('#animation-3-2'), pos);
-    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 36, 1800, pos);
+    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, pos);
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
@@ -135,26 +137,25 @@ export class ScrollService {
     }
   }
 
-  animate(start: any, end: any, target: any, index: number, slides: number, time: number, pos: number) {
+  animate(start: any, end: any, target: any, index: number, slides: number, time: number, mobile: boolean, pos: number) {
     // tslint:disable-next-line:max-line-length
     if (pos >= start.offset().top - (start.attr('id') + '-end' === end.attr('id') ? window.innerHeight : this.navHeight) && pos < end.offset().top + end.outerHeight() - this.navHeight) {
       if (!target.hasClass('animate')) {
         target.addClass('animate');
-        console.log('animation running');
         this.animationArray[index].start = 0;
         this.animationArray[index].time = time;
         this.animationArray[index].base = target.attr('data-src');
         this.animationArray[index].slides = slides;
+        this.animationArray[index].mobile = mobile;
         this.animationArray[index].target = target;
         this.animation(index);
-        console.log('index slot saved', index);
       }
     } else {
       if (target.hasClass('animate')) {
         target.removeClass('animate');
         this.cancelAnimation(this.animationArray[index].id);
-        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001.png');
-        console.log('animation stoped');
+        // tslint:disable-next-line:max-line-length
+        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001' + (this.animationArray[index].mobile && this.navHeight === 47 ? '-m' : '') + '.png');
       }
     }
   }
@@ -169,7 +170,7 @@ export class ScrollService {
     // console.log(value);
     if (value < this.animationArray[index].slides) {
       // tslint:disable-next-line:max-line-length
-      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + '.png');
+      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + (this.animationArray[index].mobile && this.navHeight === 47 ? '-m' : '') + '.png');
     }
     if (now - this.animationArray[index].start >= this.animationArray[index].time) {
       this.animationArray[index].start = 0;
@@ -228,7 +229,7 @@ export class ScrollService {
           $('app-side-nav .nav-item.active').removeClass('active');
           $('app-side-nav .section-' + i).addClass('active');
           // tslint:disable-next-line:max-line-length
-          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html() + '<span class="d-lg-none">&#9660;</span>');
+          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html() + '<span class="down-arrow">&#9660;</span>');
           $('app-nav #mobile-menu').val(i);
           if (i !== 0) {
             $('app-nav #logo a, app-nav #social-media a').addClass('active');
