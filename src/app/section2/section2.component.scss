@@ -22,8 +22,11 @@ section {
                     #slide-1 {
                         transform: scale(0.86);
                     }
+                    #slide-2, #slide-3-1, #slide-3-2 {
+                        top: -100px;
+                    }
                     #slide-4 {
-                        transform-origin: 23.2% 80%;
+                        transform-origin: 23.2% 68.3%;
                         transform: scale(0.03);
                     }
                     #slide-6 {
@@ -48,13 +51,35 @@ section {
     }
 }
 
+@media only screen and (max-width: 1024.98px) {
+    section {
+        .main {
+            .content {
+                .row {
+                    .animation {
+                        #slide-2, #slide-3-1, #slide-3-2 {
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 767.98px) {
     section {
         padding-bottom: 25px;
         .main {
             .content {
                 .row {
+                    .placeholder.step#placeholder-15-4, .placeholder.step#placeholder-17-3 {
+                        height: 0;
+                    }
                     .animation {
+                        #slide-4 {
+                            transform-origin: 28% 64.7%;
+                        }
                         &.fixed {
                             top: 47px;
                         }

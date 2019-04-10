@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as global from './global';
+// import * as global from './global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
 
+  width: number;
   navHeight: number;
   animationArray = [{
     id: 0,
@@ -43,6 +44,9 @@ export class ScrollService {
     // Section 2-1
     this.position($('#container-2-1'), $('#animation-2-1'), pos);
     this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
+    if (this.width > 1024) {
+      this.moveY($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0, -100, pos);
+    }
     this.fade($('#placeholder-2'), $('#animation-2-1 #slide-2'), 0, 1, pos);
     this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-2-1 #slide-3-1'), true, pos);
     this.visibility($('#placeholder-3-2'), $('#placeholder-4'), $('#animation-2-1 #slide-3-2'), true, pos);
@@ -203,6 +207,15 @@ export class ScrollService {
     }
   }
 
+  moveY(source: any, target: any, initial: number, final: number, pos: number) {
+    if (pos >= source.offset().top - this.navHeight && pos <= source.offset().top - this.navHeight + source.outerHeight()) {
+      // tslint:disable-next-line:max-line-length
+      target.css('top', (initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight()));
+    } else {
+      target.css('top', (pos < source.offset().top ? initial : final));
+    }
+  }
+
   fade(source: any, target: any, initial: number, final: number, pos: number) {
     if (pos >= source.offset().top - this.navHeight && pos <= source.offset().top - this.navHeight + source.outerHeight()) {
       // console.log(initial + (final - initial) * (pos - source.offset().top + this.navHeight) / source.outerHeight());
@@ -229,7 +242,7 @@ export class ScrollService {
           $('app-side-nav .nav-item.active').removeClass('active');
           $('app-side-nav .section-' + i).addClass('active');
           // tslint:disable-next-line:max-line-length
-          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html() + '<span class="down-arrow">&#9660;</span>');
+          $('app-nav #title h1').html(i === 0 ? '<span class="d-none d-lg-block">Understanding IPF Progression</span>' : $('app-side-nav .section-' + i + ' span').html() + '<span class="d-lg-none down-arrow">&#9660;</span>');
           $('app-nav #mobile-menu').val(i);
           if (i !== 0) {
             $('app-nav #logo a, app-nav #social-media a').addClass('active');
@@ -254,6 +267,7 @@ export class ScrollService {
   }
 
   resize(width: number) {
+    this.width = width;
     this.navHeight = width < 768 ? 47 : 70;
   }
 }

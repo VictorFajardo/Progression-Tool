@@ -119,6 +119,9 @@ section {
             padding-bottom: 0;
             .content {
                 .row {
+                    .placeholder.step#placeholder-19-3, .placeholder.step#placeholder-20-3 {
+                        height: 0;
+                    }
                     .quote {
                         margin: 40px 0 60px;
                         .box {
