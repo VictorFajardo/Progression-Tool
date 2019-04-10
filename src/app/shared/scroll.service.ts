@@ -42,7 +42,7 @@ export class ScrollService {
 
     /* Section 2 */
     // Section 2-1
-    this.position($('#container-2-1'), $('#animation-2-1'), pos);
+    this.position($('#container-2-1'), $('#animation-2-1'), 0, pos);
     this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
     if (this.width > 1024) {
       this.moveY($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0, -100, pos);
@@ -68,7 +68,7 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-11-1'), $('#animation-2-1 #slide-11-1'), pos);
     this.visibilityOn($('#placeholder-11-2'), $('#animation-2-1 #slide-11-2'), pos);
     // Section 2-1
-    this.position($('#container-2-2'), $('#animation-2-2'), pos);
+    this.position($('#container-2-2'), $('#animation-2-2'), 0, pos);
     this.visibility($('#placeholder-13-1'), $('#placeholder-14'), $('#animation-2-2 #slide-13-1'), true, pos);
     this.visibility($('#placeholder-13-2'), $('#placeholder-14'), $('#animation-2-2 #slide-13-2'), true, pos);
     this.fade($('#placeholder-14'), $('#animation-2-2 #slide-14'), 0, 1, pos);
@@ -83,7 +83,7 @@ export class ScrollService {
 
     /* Section 3 */
     // Section 3-1
-    this.position($('#container-3-1'), $('#animation-3-1'), pos);
+    this.position($('#container-3-1'), $('#animation-3-1'), 0, pos);
     this.visibility($('#placeholder-19-1'), $('#placeholder-20'), $('#animation-3-1 #slide-19-1'), true, pos);
     this.visibility($('#placeholder-19-2'), $('#placeholder-20'), $('#animation-3-1 #slide-19-2'), true, pos);
     this.visibility($('#placeholder-19-3'), $('#placeholder-20'), $('#animation-3-1 #slide-19-3'), true, pos);
@@ -93,10 +93,10 @@ export class ScrollService {
     this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, pos);
     this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
-    this.position($('#container-3-2'), $('#animation-3-2'), pos);
+    this.position($('#container-3-2'), $('#animation-3-2'), 0, pos);
     this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, pos);
     // Section 3-3
-    this.position($('#container-3-3'), $('#animation-3-3'), pos);
+    this.position($('#container-3-3'), $('#animation-3-3'), 0, pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
     this.visibilityOn($('#placeholder-27'), $('#animation-3-3 #slide-27'), pos);
     this.fade($('#placeholder-28'), $('#animation-3-3 #slide-28'), 0, 1, pos);
@@ -117,10 +117,10 @@ export class ScrollService {
     this.fadeMid($('#ladder-step4'), 100, 100, 0, 1, pos);
   }
 
-  position(source: any, target: any, pos: number) {
+  position(source: any, target: any, top: number, pos: number) {
     // console.log(pos, source, target);
     // Start Point
-    if (pos >= source.offset().top - this.navHeight) {
+    if (pos >= source.offset().top + top - this.navHeight) {
       if (!target.hasClass('fixed')) {
         target.addClass('fixed');
       }
@@ -130,7 +130,7 @@ export class ScrollService {
       }
     }
     // End Point
-    if (pos >= source.children().last().offset().top - this.navHeight) {
+    if (pos >= source.children().last().offset().top + top - this.navHeight) {
       if (!target.hasClass('absolute')) {
         target.addClass('absolute');
       }

@@ -16,7 +16,7 @@ export class InterstitialService {
                   <h1>Leaving LungsandYou.com</h1>\
                   <hr>\
                   <p>You are leaving LungsandYou.com. This is a link to a website for a prescription medicine used to treat idiopathic pulmonary fibrosis (IPF).<br/>Please click “Continue” to proceed.</p>\
-                  <p><img src="assets/icons/interestitial-logo.png"></p>\
+                  <p><img src="assets/icons/boehringer-ingelheim-green.svg" width="160" height="48"></p>\
                   <div class="buttons">\
                     <a class="cancel" onclick="$.fancybox.close();">Cancel</a>\
                     <a class="continue" href="' + url + '" target="_blank" onclick="$.fancybox.close();return true;">Continue</a>\

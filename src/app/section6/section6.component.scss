@@ -154,11 +154,18 @@ section {
         .main {
             .content {
                 .row {
+                    .rating {
+                        .stars {
+                            .star:hover:before, .star:hover ~ .star:before {
+                                content: none;
+                            }
+                        }
+                    }
                     .helpful-links {
                         .bottom {
                             a {
-                                .img-container {
-                                    // height: 160px;
+                                &:hover .img-container > div {
+                                    transform: none;
                                 }
                             }
                         }

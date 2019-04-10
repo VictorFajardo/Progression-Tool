@@ -57,3 +57,27 @@
         }
     }
 }
+
+//Mobile
+@media only screen and (max-width: 767.98px) {
+    .fancybox-inner {
+        .fancybox_container.fancybox-content {
+            padding: 16px 24px;
+            h1 {
+                font-size: 9.6vw;
+            }
+            p {
+                line-height: 24px;
+            }
+            .buttons {
+                a {
+                    margin: 0 0 10px 0;
+                    font-size: 15px;
+                    padding: 8px;
+                    width: 200px;
+                }
+            }
+            
+        }
+    }
+}

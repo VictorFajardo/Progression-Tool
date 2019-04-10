@@ -357,13 +357,25 @@ section {
                 }
             }
         }
-        footer {
-            .content {
-                .callout {
-                    // padding-right: $mobile-padding;
-                    // padding-left: $mobile-padding;
-                }
-            }
-        }
+    }
+}
+
+//IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    section nav .content .title {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .animation {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    section .main .content .row .hint {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    section .main .content .row .animation .slide-base {
+        width: 812px;
     }
 }

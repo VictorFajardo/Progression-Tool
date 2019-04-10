@@ -34,7 +34,7 @@ nav {
                         font-size: 14px;
                         font-family: $lato;
                         opacity: 0;
-                        letter-spacing: -.3px;
+                        letter-spacing: -1px;
                         transition: opacity .5s ease;
                     }
                 }
@@ -53,24 +53,10 @@ nav {
                 }
             }
         }
-        // &:hover {
-        //     width: 300px;
-        //     a {
-        //         div {
-        //             p {
-        //                 background-color: #f5a623;
-        //                 span {
-        //                     opacity: 1;
-        //                     width: 50px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
     }
     &:hover {
         .nav-item {
-            width: 300px;
+            width: 306px;
             a {
                 div {
                     p {
@@ -86,9 +72,29 @@ nav {
     }
 }
 
+//IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
+    }
+}
+
+//Edge
+@supports (-ms-ime-align:auto) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
+    }
+}
+
 //Chrome 29+
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
     nav .nav-item a div p span {
         letter-spacing: normal;
+    }
+}
+//Firefox
+@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
     }
 }

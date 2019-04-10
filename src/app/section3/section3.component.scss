@@ -38,7 +38,7 @@ section {
                     }
                     &.absolute {
                         position: absolute;
-                        top: initial;
+                        top: auto;
                         bottom: 0;
                     }
                 }
@@ -46,11 +46,11 @@ section {
                     margin-top: -165px;
                 }
                 #animation-3-1-end, #animation-3-2-end, #animation-3-3-end {
-                    height: initial;
+                    height: auto;
                 }
                 .block-text {
                     .big {
-                        font: $normal-font-size/42px $lora;
+                        font: 24px/42px $lora;
                     }
                 }
                 .quote {
@@ -138,6 +138,14 @@ section {
                         &.absolute {
                             top: initial;
                         }
+                    }
+                    .mobile-mb {
+                        z-index: 1;
+                        margin-bottom: -35px;
+                    }
+                    .mobile-mt {
+                        z-index: 1;
+                        margin-top: -105px;
                     }
                 }
             }

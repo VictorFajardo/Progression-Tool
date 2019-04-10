@@ -6,6 +6,7 @@ section {
         padding-top: 50px;
         .content {
             height: initial;
+            height: auto;
             .title {
                 position: initial;
                 .label {
@@ -104,5 +105,14 @@ section {
                 }
             }
         }
+    }
+}
+
+//IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    section nav .content .title {
+        position: static;
+        left: 0;
+        transform: none;
     }
 }
