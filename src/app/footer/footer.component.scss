@@ -14,11 +14,8 @@ footer {
     }
     ul {
         margin-top: 1.5em;
-        overflow: overlay;
-        // padding-top: 30px;
-        // padding-bottom: 24px;
+        overflow: auto;
         margin-left: -40px;
-        // border-bottom: 1px solid #8d8d8d;
         li {
             float: left;
             margin-right: 38px;
@@ -40,7 +37,6 @@ footer {
         .code {
             display: inline-block;
             width: 186px;
-            text-align: center;
         }
     }
 }

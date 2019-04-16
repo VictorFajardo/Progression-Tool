@@ -15,6 +15,7 @@ export class ScrollService {
     base: '',
     slides: 0,
     mobile: false,
+    tablet: false,
     target: $()
   }, {
     id: 0,
@@ -23,6 +24,7 @@ export class ScrollService {
     base: '',
     slides: 0,
     mobile: false,
+    tablet: false,
     target: $()
   }];
 
@@ -90,11 +92,11 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
     this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
     this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
-    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, pos);
+    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, false, pos);
     this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
     this.position($('#container-3-2'), $('#animation-3-2'), 0, pos);
-    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, pos);
+    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, true, pos);
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), 0, pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
@@ -115,6 +117,14 @@ export class ScrollService {
     this.fadeMid($('#ladder-step2'), 100, 100, 0, 1, pos);
     this.fadeMid($('#ladder-step3'), 100, 100, 0, 1, pos);
     this.fadeMid($('#ladder-step4'), 100, 100, 0, 1, pos);
+
+    /* Section 5 */
+    this.play($('#video-5-1'), true, pos);
+    this.play($('#video-5-2'), true, pos);
+    this.play($('#video-5-3'), true, pos);
+
+    /* Section 5 */
+    this.play($('#video-background-6'), true, pos);
   }
 
   position(source: any, target: any, top: number, pos: number) {
@@ -141,7 +151,7 @@ export class ScrollService {
     }
   }
 
-  animate(start: any, end: any, target: any, index: number, slides: number, time: number, mobile: boolean, pos: number) {
+  animate(start: any, end: any, target: any, index: number, slides: number, time: number, mobile: boolean, tablet: boolean, pos: number) {
     // tslint:disable-next-line:max-line-length
     if (pos >= start.offset().top - (start.attr('id') + '-end' === end.attr('id') ? window.innerHeight : this.navHeight) && pos < end.offset().top + end.outerHeight() - this.navHeight) {
       if (!target.hasClass('animate')) {
@@ -151,6 +161,7 @@ export class ScrollService {
         this.animationArray[index].base = target.attr('data-src');
         this.animationArray[index].slides = slides;
         this.animationArray[index].mobile = mobile;
+        this.animationArray[index].tablet = tablet;
         this.animationArray[index].target = target;
         this.animation(index);
       }
@@ -159,7 +170,7 @@ export class ScrollService {
         target.removeClass('animate');
         this.cancelAnimation(this.animationArray[index].id);
         // tslint:disable-next-line:max-line-length
-        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001' + (this.animationArray[index].mobile && this.navHeight === 47 ? '-m' : '') + '.png');
+        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001' + (this.animationArray[index].mobile && this.width < 768 || this.animationArray[index].tablet && this.width < 1025 ? '-m' : '') + '.png');
       }
     }
   }
@@ -174,7 +185,7 @@ export class ScrollService {
     // console.log(value);
     if (value < this.animationArray[index].slides) {
       // tslint:disable-next-line:max-line-length
-      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + (this.animationArray[index].mobile && this.navHeight === 47 ? '-m' : '') + '.png');
+      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + (this.animationArray[index].mobile && this.width < 768 || this.animationArray[index].tablet && this.width < 1025 ? '-m' : '') + '.png');
     }
     if (now - this.animationArray[index].start >= this.animationArray[index].time) {
       this.animationArray[index].start = 0;
@@ -184,6 +195,19 @@ export class ScrollService {
 
   cancelAnimation(id: any) {
     cancelAnimationFrame(id);
+  }
+
+  play(target: any, option: boolean, pos: number) {
+    // tslint:disable-next-line:max-line-length
+    if (pos >= target.offset().top - this.navHeight - window.innerHeight && pos < target.offset().top + target.outerHeight() - this.navHeight) {
+      if (target.get(0).paused) {
+        target.get(0).play();
+      }
+    } else {
+      if (!target.get(0).paused) {
+        target.get(0).pause();
+      }
+    }
   }
 
   visibility(start: any, end: any, target: any, option: boolean, pos: number) {

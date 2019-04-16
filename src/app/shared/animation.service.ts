@@ -19,14 +19,13 @@ export class AnimationService {
   resize(width: number, height: number) {
     const self = this;
     this.navHeight = width < 768 ? 47 : 70;
+
     // tslint:disable-next-line:only-arrow-functions
     $('.responsive').each(function() {
-      const src = $(this).attr('data-src');
-      if (width < 768) {
-        $(this).attr('src', src.replace('.', '-m.'));
-      } else {
-        $(this).attr('src', src);
-      }
+      // tslint:disable-next-line:max-line-length
+      const src = width < ($(this).hasClass('tablet') ? 1025 : 768) ? $(this).attr('data-src').replace('.', '-m.') : $(this).attr('data-src');
+      const attr = $(this).hasClass('data-src') ? 'data-src' : 'src';
+      $(this).attr(attr, src);
     });
 
     if (this.base > height - this.navHeight) {
@@ -34,7 +33,6 @@ export class AnimationService {
       $('.slide-base').each(function() {
           $(this).width(height - self.navHeight);
       });
-      // console.log('resizing base animation to: ', height - this.navHeight);
     } else {
       $('.slide-base').each(function() {
         $(this).css('width', '');

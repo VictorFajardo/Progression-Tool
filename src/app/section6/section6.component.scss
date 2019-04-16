@@ -84,13 +84,14 @@ section {
                 .helpful-links {
                     text-align: center;
                     .top {
-                        height: 105px;
+                        height: 104px;
                         border-top-left-radius: 8px;
                         border-top-right-radius: 8px;
                         background: url(/assets/main-site/top-related.png) center center no-repeat;
                         font: 28px/85px $klinicslab-bold;
                         color: #fff;
                         background-size: auto 104px;
+                        margin-bottom: -1px;
                     }
                     .bottom {
                         background-color: #fff;
@@ -151,6 +152,17 @@ section {
 //Tablet
 @media only screen and (max-width: 1024.98px) {
     section {
+        .video-background {
+            .video-container {
+                video {
+                    width: auto;
+                    height: 100%;
+                    -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                    left: 40%;
+                }
+            }
+        }
         .main {
             .content {
                 .row {
@@ -179,6 +191,19 @@ section {
 //Mobile
 @media only screen and (max-width: 767.98px) {
     section {
+        .video-background {
+            .video-container {
+                height: auto;
+                img {
+                    width: 100%;
+                }
+                video {
+                    width: auto;
+                    height: 101%;
+                    left: 50%;
+                }
+            }
+        }
         .main {
             .content {
                 .row{
