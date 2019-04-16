@@ -198,15 +198,24 @@ export class ScrollService {
   }
 
   play(target: any, option: boolean, pos: number) {
-    // tslint:disable-next-line:max-line-length
-    if (pos >= target.offset().top - this.navHeight - window.innerHeight && pos < target.offset().top + target.outerHeight() - this.navHeight) {
-      if (target.get(0).paused) {
-        target.get(0).play();
+    const promise = target.get(0).play();
+    if (promise !== undefined) {
+      promise.then(success => {
+      // tslint:disable-next-line:max-line-length
+      if (pos >= target.offset().top - this.navHeight - window.innerHeight && pos < target.offset().top + target.outerHeight() - this.navHeight) {
+        if (target.get(0).paused) {
+          console.log(target, 'play');
+          target.get(0).play();
+        }
+      } else {
+        if (!target.get(0).paused) {
+          // console.log(target);
+          target.get(0).pause();
+        }
       }
-    } else {
-      if (!target.get(0).paused) {
-        target.get(0).pause();
-      }
+      }).catch(error => {
+        console.log('Autoplay is not available!');
+      });
     }
   }
 
