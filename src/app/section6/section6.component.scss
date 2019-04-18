@@ -208,8 +208,16 @@ section {
                 }
             }
         }
+        nav {
+            .content {
+                .title {
+                    bottom: 0;
+                }
+            }
+        }
         .main {
             .content {
+                margin-top: 0;
                 .row{
                     .quote {
                         margin: 30px 0;
