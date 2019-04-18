@@ -97,6 +97,18 @@ nav {
     z-index: 1000;;
 }
 
+#debugger {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    // border: 1px dotted #000;
+    z-index: 1000;
+    p {
+        margin: 10px;
+    }
+}
+
 //Tablet
 @media only screen and (max-width: 1024.98px) {
     nav {

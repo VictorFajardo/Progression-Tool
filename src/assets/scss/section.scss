@@ -298,12 +298,15 @@ section {
             }
         }
         .main {
-            // &:first-of-type {
-                background-color: #fff;
-            // }
+            background-color: #fff;
             .content {
                 margin-top: 0;
                 .row {
+                    .animation {
+                        .slide-base {
+                            width: calc(100vh - 47px);
+                        }
+                    }
                     .text {
                         font-size: $mobile-font-size;
                         line-height: 7.65vw;

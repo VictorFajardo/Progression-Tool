@@ -28,15 +28,18 @@ export class AnimationService {
       $(this).attr(attr, src);
     });
 
-    if (this.base > height - this.navHeight) {
-      // tslint:disable-next-line:only-arrow-functions
-      $('.slide-base').each(function() {
-          $(this).width(height - self.navHeight);
-      });
-    } else {
-      $('.slide-base').each(function() {
-        $(this).css('width', '');
-      });
+    if (width >= 768) {
+      if (this.base > height - this.navHeight) {
+        // tslint:disable-next-line:only-arrow-functions
+        $('.slide-base').each(function() {
+            $(this).width(height - self.navHeight);
+            // $('#debugger p').html('base width: ' + (height - self.navHeight));
+        });
+      } else {
+        $('.slide-base').each(function() {
+          $(this).css('width', '');
+        });
+      }
     }
   }
 }

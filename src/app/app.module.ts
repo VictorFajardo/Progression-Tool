@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { Section0Component } from './section0/section0.component';
 import { Section1Component } from './section1/section1.component';
@@ -15,7 +16,6 @@ import { Section6Component } from './section6/section6.component';
 import { FooterComponent } from './footer/footer.component';
 
 import * as $ from 'jquery';
-import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
