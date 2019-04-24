@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InterstitialService } from '../shared/interstitial.service';
+import { AnalyticsService } from '../shared/analytics.service';
 
 @Component({
   selector: 'app-section6',
@@ -10,7 +11,7 @@ export class Section6Component implements OnInit {
 
   rating = false;
 
-  constructor(private external: InterstitialService) { }
+  constructor(private external: InterstitialService, private analytics: AnalyticsService) { }
 
   ngOnInit() {
     const self = this;
@@ -70,11 +71,16 @@ export class Section6Component implements OnInit {
   }
 
   openExternal($event: Event) {
+    this.analytics.click('Learn about a Treatment for IPF', 'Exit Link', $($event).hasClass('cta') ? 'click_3' : 'click_relared');
     this.external.open($event);
   }
 
   share(service: string) {
-    console.log('sharing');
     $('.at-svc-' + service)[0].click();
+    this.analytics.click(service, 'Progression Tool', 'share');
+  }
+
+  track(label: string) {
+    this.analytics.click(label, 'related articles', 'click_related');
   }
 }

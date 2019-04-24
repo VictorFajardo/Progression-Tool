@@ -7,9 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta property="og:title" content="Understanding IPF Progression - Lungs and You" />
+  <meta property="og:type" content="Website" />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="/assets/main-site/share.jpg" />
   <meta name="google-site-verification" content="u7yPq3wi2-LM0t2pHNOtRdvnx1fcqP3BucPUXDip8pI" />
 </head>
 <body>
+  <script type="text/javascript">
+    var account = location.host == 'https://www.lungsandyou.com' || location.host == 'https://qa.ofev.com' ? 'UA-15452354-205' : 'UA-74622543-7';
+  </script>
+  <script async src='https://www.googletagmanager.com/gtag/js?id=' + account></script>
+  <script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', account);
+    const GA_TRACKING_ID = account;
+    console.log(account == 'UA-15452354-205' ? '%cProd GA' : '%cDev GA', 'font-weight: bold;');
+  </script>
   <app-root></app-root>
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5848231284b3ee94"></script>
   <script type="text/javascript">
@@ -18,10 +34,10 @@
         var addthis_share = addthis_share || {};
         addthis_share.url = window.location.href.replace('https://','http://');
       }
-    }
-    var addthis_config = addthis_config||{};
+    var addthis_config = addthis_config || {};
     addthis_config.data_track_addressbar = false;
     addthis_config.data_track_clickback = false;
-    </script>
+  }
+</script>
 </body>
 </html>

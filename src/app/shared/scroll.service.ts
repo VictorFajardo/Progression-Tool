@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AnalyticsService } from './analytics.service';
 // import * as global from './global';
 
 @Injectable({
@@ -8,6 +9,7 @@ export class ScrollService {
 
   width: number;
   navHeight: number;
+  locked = false;
   animationArray = [{
     id: 0,
     start: 0,
@@ -28,7 +30,7 @@ export class ScrollService {
     target: $()
   }];
 
-  constructor() { }
+  constructor(private analytics: AnalyticsService) { }
 
   scrollProgress(pos: number) {
     // console.log('pos:', pos);
@@ -267,11 +269,24 @@ export class ScrollService {
     }
   }
 
+  lock() {
+    this.locked = true;
+  }
+
+  unlock() {
+    this.locked = false;
+  }
+
   menu(pos: number) {
     for (let i = 0; i <= 6; i++) {
       // tslint:disable-next-line:max-line-length
       if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0) && pos < (i < 6 ? Math.floor($('app-section' + (i + 1) + ' nav').offset().top - 70) : $('app-footer').offset().top)) {
         if (!$('app-side-nav .section-' + i).hasClass('active')) {
+          if (!this.locked) {
+            this.analytics.click(i > 0 ? 'Section ' + i : 'Home', 'Progression Tool', 'scroll');
+          } else {
+            this.unlock();
+          }
           $('app-side-nav .nav-item.active').removeClass('active');
           $('app-side-nav .section-' + i).addClass('active');
           // tslint:disable-next-line:max-line-length

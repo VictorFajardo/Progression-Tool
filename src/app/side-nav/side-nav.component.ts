@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnalyticsService } from '../shared/analytics.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,7 +10,7 @@ export class SideNavComponent implements OnInit {
 
   navHeight: 70;
 
-  constructor() { }
+  constructor(private analytics: AnalyticsService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class SideNavComponent implements OnInit {
   goTo(i: number) {
     // tslint:disable-next-line:max-line-length
     $(window).scrollTop(i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - $('nav.main-nav').height()) : 0);
+    this.analytics.click(i > 0 ? 'Section ' + i : 'Home', 'Progression_Nav', 'click');
   }
 
 }

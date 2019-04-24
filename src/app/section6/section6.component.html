@@ -3,7 +3,7 @@
     <div class="row">
       <div class="video-container">
         <img src="assets/heroes/section6-mobile-hero.png" class="d-md-none" alt="">
-        <video [muted]="true" muted loop playsinline autoplay id="video-background-6">
+        <video [muted]="true" muted loop playsinline id="video-background-6">
           <source src="assets/videos/section-6-hero.mp4" type="video/mp4">
         </video>
       </div>
@@ -99,28 +99,28 @@
                   </a>
                 </div>
                 <div class="col-12 col-md-4">
-                  <a href="/lifestyle/treatment-strategies">
+                  <a href="/lifestyle/treatment-strategies" (click)="track('Taking charge of your diagnosis')">
                     <div class="img-container">
                       <div class="related" id="related-2"></div>
                     </div>
                   </a>
-                  <a class="category" href="/lifestyle">
+                  <a class="category" href="/lifestyle" (click)="track('Taking charge of your diagnosis')">
                     <p>Living with IPF</p>
                   </a>
-                  <a class="article" href="/lifestyle/treatment-strategies">
+                  <a class="article" href="/lifestyle/treatment-strategies" (click)="track('Taking charge of your diagnosis')">
                     <h3>Taking Charge of Your Diagnosis and Treatment </h3>
                   </a>
                 </div>
                 <div class="col-12 col-md-4">
-                  <a href="/sign-up">
+                  <a href="/sign-up" (click)="track('Symptoms of IPF')">
                     <div class="img-container">
                       <div class="related" id="related-3"></div>
                     </div>
                   </a>
-                  <a class="category" href="/sign-up">
+                  <a class="category" href="/sign-up" (click)="track('Symptoms of IPF')">
                     <p>Register Now</p>
                   </a>
-                  <a class="article" href="/sign-up">
+                  <a class="article" href="/sign-up" (click)="track('Symptoms of IPF')">
                     <h3>Sign Up to Receive Patient Stories Right in Your Inbox </h3>
                   </a>
                 </div>

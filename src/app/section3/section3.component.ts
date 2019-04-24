@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InterstitialService } from '../shared/interstitial.service';
+import { AnalyticsService } from '../shared/analytics.service';
 
 @Component({
   selector: 'app-section3',
@@ -8,12 +9,13 @@ import { InterstitialService } from '../shared/interstitial.service';
 })
 export class Section3Component implements OnInit {
 
-  constructor(private external: InterstitialService) { }
+  constructor(private external: InterstitialService, private analytics: AnalyticsService) { }
 
   ngOnInit() {
   }
 
   openExternal($event: Event) {
+    this.analytics.click('Learn about a Treatment for IPF', 'Exit Link', 'click_2');
     this.external.open($event);
   }
 }
