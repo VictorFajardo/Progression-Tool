@@ -85,7 +85,10 @@ section {
                     .copy {
                         .big {
                             font-size: $mobile-font-size;
-                            line-height: 7.363vw;
+                            line-height: 7.64vw;
+                            &.lora {
+                                font-size: 4.86vw;
+                            }
                         }
                     }
                     .video {

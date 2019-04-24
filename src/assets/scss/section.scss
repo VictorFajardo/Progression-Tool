@@ -44,9 +44,9 @@ section {
             .row {
                 .placeholder {
                     height: 800px;
-                    // border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
-                    // border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
-                    // margin: -1px auto; //dev
+                    border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
+                    border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
+                    margin: -1px auto; //dev
                     &.step {
                         height: 200px;
                     }
@@ -195,13 +195,23 @@ section {
     }
 }
 
+//Standart Monitors
+@media only screen and (max-width: 1366.98px) {
+    section {
+        nav {
+            .content {
+                height: 450px;
+            }
+        }
+    }
+
+}
 
 //Tablet
 @media only screen and (max-width: 1024.98px) {
     section {
         nav {
             .content {
-                height: 450px;
                 .title {
                     .label {
                         margin-left: 0;
@@ -302,6 +312,9 @@ section {
             .content {
                 margin-top: 0;
                 .row {
+                    .placeholder {
+                        height: calc(100vh - 47px);
+                    }
                     .animation {
                         .slide-base {
                             width: calc(100vh - 47px);

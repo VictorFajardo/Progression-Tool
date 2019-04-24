@@ -149,14 +149,20 @@ section {
     }
 }
 
-//Tablet
-@media only screen and (max-width: 1024.98px) {
+//Standart Monitors
+@media only screen and (max-width: 1366.98px) {
     section {
         .video-background {
             .video-container {
                 height: 450px;
             }
         }
+    }
+}
+
+//Tablet
+@media only screen and (max-width: 1024.98px) {
+    section {
         nav {
             .content {
                 .title {
@@ -216,6 +222,7 @@ section {
             }
         }
         .main {
+            background-size: auto;
             .content {
                 margin-top: 0;
                 .row{
@@ -284,6 +291,30 @@ section {
                             display: none;
                             &.on {
                                 display: block;
+                            }
+                        }
+                    }
+                    .helpful-links {
+                        .bottom {
+                            .container {
+                                .row {
+                                    div:not(last-of-type) {
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                            }
+                            a.category {
+                                p {
+                                    font-size: 14px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                            a.article {
+                                h3 {
+                                    font-size: 20px;
+                                    line-height: 26px;
+                                    padding: 1% 0% 3% 0%;
+                                }
                             }
                         }
                     }
