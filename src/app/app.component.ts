@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ScrollService } from './shared/scroll.service';
-import { WindowService } from './shared/window.service';
-import { AnimationService } from './shared/animation.service';
-import { MetaService } from './shared/meta.service';
+import { ScrollService } from './services/scroll.service';
+import { WindowService } from './services/window.service';
+import { AnimationService } from './services/animation.service';
+import { MetaService } from './services/meta.service';
 
 @Component({
   selector: 'app-root',

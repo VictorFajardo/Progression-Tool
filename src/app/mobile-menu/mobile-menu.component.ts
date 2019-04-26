@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsService } from '../shared/analytics.service';
-import { ScrollService } from '../shared/scroll.service';
+import { AnalyticsService } from '../services/analytics.service';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-mobile-menu',

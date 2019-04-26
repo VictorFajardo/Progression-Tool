@@ -14,19 +14,13 @@ export class ScrollService {
     id: 0,
     start: 0,
     time: 0,
-    base: '',
     slides: 0,
-    mobile: false,
-    tablet: false,
     target: $()
   }, {
     id: 0,
     start: 0,
     time: 0,
-    base: '',
     slides: 0,
-    mobile: false,
-    tablet: false,
     target: $()
   }];
 
@@ -94,11 +88,11 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
     this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
     this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
-    // this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, false, pos);
+    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, pos);
     this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
     this.position($('#container-3-2'), $('#animation-3-2'), 0, pos);
-    // this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, true, pos);
+    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, pos);
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), 0, pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);
@@ -153,17 +147,14 @@ export class ScrollService {
     }
   }
 
-  animate(start: any, end: any, target: any, index: number, slides: number, time: number, mobile: boolean, tablet: boolean, pos: number) {
+  animate(start: any, end: any, target: any, index: number, slides: number, time: number, pos: number) {
     // tslint:disable-next-line:max-line-length
     if (pos >= start.offset().top - (start.attr('id') + '-end' === end.attr('id') ? window.innerHeight : this.navHeight) && pos < end.offset().top + end.outerHeight() - this.navHeight) {
       if (!target.hasClass('animate')) {
         target.addClass('animate');
         this.animationArray[index].start = 0;
         this.animationArray[index].time = time;
-        this.animationArray[index].base = target.attr('data-src');
         this.animationArray[index].slides = slides;
-        this.animationArray[index].mobile = mobile;
-        this.animationArray[index].tablet = tablet;
         this.animationArray[index].target = target;
         this.animation(index);
       }
@@ -172,7 +163,7 @@ export class ScrollService {
         target.removeClass('animate');
         this.cancelAnimation(this.animationArray[index].id);
         // tslint:disable-next-line:max-line-length
-        this.animationArray[index].target.attr('src', this.animationArray[index].base + '-001' + (this.animationArray[index].mobile && this.width < 768 || this.animationArray[index].tablet && this.width < 1025 ? '-m' : '') + '.png');
+        this.animationArray[index].target.css('background-position', '0 0');
       }
     }
   }
@@ -183,11 +174,13 @@ export class ScrollService {
     }
     const now = new Date().getTime();
     // tslint:disable-next-line:max-line-length
-    const value = 1 + Math.floor(this.animationArray[index].slides * (now - this.animationArray[index].start) / this.animationArray[index].time);
-    // console.log(value);
+    const value = Math.floor(this.animationArray[index].slides * (now - this.animationArray[index].start) / this.animationArray[index].time);
+    console.log(value, '0 ' + -1 * this.animationArray[index].target.height() * value + 'px');
     if (value < this.animationArray[index].slides) {
       // tslint:disable-next-line:max-line-length
-      this.animationArray[index].target.attr('src', this.animationArray[index].base + ((value < 10) ? '-00' + value : '-0' + value) + (this.animationArray[index].mobile && this.width < 768 || this.animationArray[index].tablet && this.width < 1025 ? '-m' : '') + '.png');
+      const gap = this.animationArray[index].target.height() !== this.animationArray[index].target.width() ? 0.5 : 0;
+      // tslint:disable-next-line:max-line-length
+      this.animationArray[index].target.css('background-position', '0 ' + -1 * (this.animationArray[index].target.height() - gap) * value + 'px');
     }
     if (now - this.animationArray[index].start >= this.animationArray[index].time) {
       this.animationArray[index].start = 0;
@@ -200,25 +193,27 @@ export class ScrollService {
   }
 
   play(target: any, option: boolean, pos: number) {
-    const promise = target.get(0).play();
-    if (promise !== undefined) {
-      promise.then(success => {
+    // const promise = target.get(0).play();
+    // if (promise !== undefined) {
+    //   promise.then(success => {
       // tslint:disable-next-line:max-line-length
       if (pos >= target.offset().top - this.navHeight - window.innerHeight && pos < target.offset().top + target.outerHeight() - this.navHeight) {
-        if (target.get(0).paused) {
+        if (target.get(0).paused !== undefined && target.get(0).paused) {
           console.log(target, 'play');
+          target.css('visibility', 'visible');
           target.get(0).play();
         }
       } else {
-        if (!target.get(0).paused) {
-          // console.log(target);
+        if (target.get(0).paused !== undefined && !target.get(0).paused) {
+          console.log(!target.get(0).paused, target, 'pause');
+          target.css('visibility', '');
           target.get(0).pause();
         }
       }
-      }).catch(error => {
-        console.log('Autoplay is not available!');
-      });
-    }
+    //   }).catch(error => {
+    //     // console.log('Autoplay is not available!');
+    //   });
+    // }
   }
 
   visibility(start: any, end: any, target: any, option: boolean, pos: number) {

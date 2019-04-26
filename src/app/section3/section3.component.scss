@@ -67,7 +67,11 @@ section {
                 }
                 #slide-21 {
                     background-image: url('/assets/arrows/animation-1-spritesheet.png');
-                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                #slide-24 {
+                    background-image: url('/assets/arrows/animation-2-spritesheet.png');
+                    background-size: cover;
                 }
             }
         }
@@ -102,6 +106,13 @@ section {
         }
         .main {
             padding-bottom: 180px;
+            .content {
+                .row {
+                    #slide-24 {
+                        background-image: url('/assets/arrows/animation-2-spritesheet-m.png');
+                    }
+                }
+            }
         }
         footer {
             .content {

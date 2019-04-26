@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InterstitialService } from '../shared/interstitial.service';
+import { InterstitialService } from '../services/interstitial.service';
 
 @Component({
   selector: 'app-footer',

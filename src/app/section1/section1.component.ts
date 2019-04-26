@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TooltipService } from '../shared/tooltip.service';
-import { InterstitialService } from '../shared/interstitial.service';
-import { AnalyticsService } from '../shared/analytics.service';
+import { TooltipService } from '../services/tooltip.service';
+import { InterstitialService } from '../services/interstitial.service';
+import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
   selector: 'app-section1',

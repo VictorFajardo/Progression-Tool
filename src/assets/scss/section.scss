@@ -44,9 +44,9 @@ section {
             .row {
                 .placeholder {
                     height: 800px;
-                    border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
-                    border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
-                    margin: -1px auto; //dev
+                    // border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
+                    // border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
+                    // margin: -1px auto; //dev
                     &.step {
                         height: 200px;
                     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GridService } from '../shared/grid.service';
-import { AnalyticsService } from '../shared/analytics.service';
-import { ScrollService } from '../shared/scroll.service';
+import { GridService } from '../services/grid.service';
+import { AnalyticsService } from '../services/analytics.service';
+import { ScrollService } from '../services/scroll.service';
 
 @Component({
   selector: 'app-nav',

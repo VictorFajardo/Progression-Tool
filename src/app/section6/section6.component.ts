@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InterstitialService } from '../shared/interstitial.service';
-import { AnalyticsService } from '../shared/analytics.service';
+import { InterstitialService } from '../services/interstitial.service';
+import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
   selector: 'app-section6',

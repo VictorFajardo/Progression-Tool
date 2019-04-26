@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TooltipService } from '../shared/tooltip.service';
+import { TooltipService } from '../services/tooltip.service';
 
 @Component({
   selector: 'app-section4',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsService } from '../shared/analytics.service';
+import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
   selector: 'app-side-nav',
