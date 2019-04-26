@@ -94,11 +94,11 @@ export class ScrollService {
     this.visibilityOn($('#placeholder-20-1'), $('#animation-3-1 #slide-20-1'), pos);
     this.visibilityOn($('#placeholder-20-2'), $('#animation-3-1 #slide-20-2'), pos);
     this.visibilityOn($('#placeholder-20-3'), $('#animation-3-1 #slide-20-3'), pos);
-    this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, false, pos);
+    // this.animate($('#placeholder-21'), $('#animation-3-1-end'), $('#animation-3-1 #slide-21'), 0, 57, 3000, false, false, pos);
     this.visibilityOn($('#placeholder-21'), $('#animation-3-1 #slide-21'), pos);
     // Section 3-2
     this.position($('#container-3-2'), $('#animation-3-2'), 0, pos);
-    this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, true, pos);
+    // this.animate($('#animation-3-2'), $('#animation-3-2-end'), $('#animation-3-2 #slide-24'), 1, 35, 1800, true, true, pos);
     // Section 3-3
     this.position($('#container-3-3'), $('#animation-3-3'), 0, pos);
     this.visibilityOn($('#placeholder-26'), $('#animation-3-3 #slide-26'), pos);

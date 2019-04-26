@@ -32,6 +32,12 @@ section {
                             left: 0;
                         }
                     }
+                    div {
+                        width: 100%;
+                        position: absolute;
+                        top : 0;
+                        left: 0;
+                    }
                     &.fixed {
                         position: fixed;
                         top: 70px;
@@ -58,6 +64,10 @@ section {
                     .box {
                         padding: $normal-line-height 50px;
                     }
+                }
+                #slide-21 {
+                    background-image: url('/assets/arrows/animation-1-spritesheet.png');
+                    background-repeat: no-repeat;
                 }
             }
         }

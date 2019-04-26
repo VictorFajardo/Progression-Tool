@@ -320,6 +320,9 @@ section {
                             width: calc(100vh - 47px);
                         }
                     }
+                    .slide-base {
+                        width: calc(100vh - 47px);
+                    }
                     .text {
                         font-size: $mobile-font-size;
                         line-height: 7.65vw;
@@ -392,7 +395,7 @@ section {
         right: 0;
         margin: 0 auto;
     }
-    section .main .content .row .animation .slide-base {
+    section .main .content .row .animation .slide-base, section .main .content .row .slide-base {
         width: 812px;
     }
 }
