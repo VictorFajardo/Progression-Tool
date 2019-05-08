@@ -47,6 +47,9 @@ section {
                     // border-top: 1px dashed rgba(0, 0, 255, 0.5); //dev
                     // border-bottom: 1px dashed rgba(255, 0, 0, .5); //dev
                     // margin: -1px auto; //dev
+                    &.half {
+                        height: 400px;
+                    }
                     &.step {
                         height: 200px;
                     }

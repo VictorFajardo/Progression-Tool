@@ -31,6 +31,7 @@ export class ScrollService {
     // Menu Items
     this.menu(pos);
     this.active($('app-section0 nav .title'), $('app-nav nav'), pos);
+    this.visibilityOff($('app-section1'), $('.mobile-hero-base'), pos);
 
     /* Section 1 */
     // Sub Animations
@@ -44,6 +45,8 @@ export class ScrollService {
     this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
     if (this.width > 1024) {
       this.moveY($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0, -100, pos);
+    } else {
+      $('#animation-2-1 #slide-1').css('top', '');
     }
     this.fade($('#placeholder-2'), $('#animation-2-1 #slide-2'), 0, 1, pos);
     this.visibility($('#placeholder-3-1'), $('#placeholder-4'), $('#animation-2-1 #slide-3-1'), true, pos);
@@ -175,7 +178,6 @@ export class ScrollService {
     const now = new Date().getTime();
     // tslint:disable-next-line:max-line-length
     const value = Math.floor(this.animationArray[index].slides * (now - this.animationArray[index].start) / this.animationArray[index].time);
-    console.log(value, '0 ' + -1 * this.animationArray[index].target.height() * value + 'px');
     if (value < this.animationArray[index].slides) {
       // tslint:disable-next-line:max-line-length
       const gap = this.animationArray[index].target.height() !== this.animationArray[index].target.width() ? 0.5 : 0;
@@ -199,13 +201,13 @@ export class ScrollService {
       // tslint:disable-next-line:max-line-length
       if (pos >= target.offset().top - this.navHeight - window.innerHeight && pos < target.offset().top + target.outerHeight() - this.navHeight) {
         if (target.get(0).paused !== undefined && target.get(0).paused) {
-          console.log(target, 'play');
+          // console.log(target, 'play');
           target.css('visibility', 'visible');
           target.get(0).play();
         }
       } else {
         if (target.get(0).paused !== undefined && !target.get(0).paused) {
-          console.log(!target.get(0).paused, target, 'pause');
+          // console.log(!target.get(0).paused, target, 'pause');
           target.css('visibility', '');
           target.get(0).pause();
         }
@@ -226,6 +228,10 @@ export class ScrollService {
 
   visibilityOn(start: any, target: any, pos: number) {
     target.css('visibility', pos >= start.offset().top - this.navHeight ? 'visible' : 'hidden');
+  }
+
+  visibilityOff(start: any, target: any, pos: number) {
+    target.css('visibility', pos >= start.offset().top - this.navHeight ? 'hidden' : 'visible');
   }
 
   zoom(source: any, target: any, initial: number, final: number, pos: number) {

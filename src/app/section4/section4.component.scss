@@ -37,6 +37,8 @@ section {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
+                        background-color: #f7f7f7;
+                        margin: 0;
                         p {
                             font: 24px/42px $lora;
                         }
@@ -54,6 +56,8 @@ section {
             .content {
                 .title {
                     .text {
+                        flex: 0 0 calc(83.333333% - 30px);
+                        max-width: calc(83.333333% - 30px);
                         h1 {
                             letter-spacing: -1.5px;
                         }
