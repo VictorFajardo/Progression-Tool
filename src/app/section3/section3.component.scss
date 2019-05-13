@@ -41,8 +41,6 @@ section {
                     &.fixed {
                         position: fixed;
                         top: 70px;
-                        -webkit-transform: translateZ(0);
-                        transform: translateZ(0);
                     }
                     &.absolute {
                         position: absolute;
